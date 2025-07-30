@@ -1,9 +1,207 @@
-from fastapi import APIRouter, UploadFile
-from ingestion.pdf_extractor import extract_text_from_pdf
+"""
+Document ingestion API endpoints
+"""
+from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks
+from fastapi.responses import JSONResponse
+from typing import List, Dict, Any
+import logging
 
-router = APIRouter()
+from ingestion.pdf_extractor import extract_text_from_pdf
+from ingestion.ocrProcessor import process_image_with_ocr
+from ingestion.textCleaner import clean_text
+from chunking.chunker import legal_chunker
+from chunking.metadata_builder import metadata_builder
+from embeddings.embed_client import embedding_client
+from vectordb.pinecone_client import upsert_embeddings
+from utils.file_utils import file_utils
+from utils.validation import validation_utils
+from config.settings import settings
+
+logger = logging.getLogger(__name__)
+router = APIRouter(prefix="/ingest", tags=["Document Ingestion"])
 
 @router.post("/upload")
-async def upload_pdf(file: UploadFile):
-    content = extract_text_from_pdf(file.file)
-    return {"text": content}
+async def upload_document(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+    doc_type: str = "unknown",
+    doc_title: str = None,
+    doc_author: str = None
+):
+    """
+    Upload and process a document for the RAG system
+    """
+    try:
+        # Validate file upload
+        validation_result = validation_utils.validate_file_upload(
+            filename=file.filename,
+            file_size=file.size,
+            content_type=file.content_type
+        )
+        
+        if not validation_result["valid"]:
+            raise HTTPException(
+                status_code=400,
+                detail={"errors": validation_result["errors"], "warnings": validation_result["warnings"]}
+            )
+        
+        # Save uploaded file
+        file_content = await file.read()
+        saved_file_path = file_utils.save_uploaded_file(file_content, file.filename)
+        
+        # Process document in background
+        background_tasks.add_task(
+            process_document,
+            saved_file_path,
+            file.filename,
+            file.content_type,
+            doc_type,
+            doc_title,
+            doc_author
+        )
+        
+        return JSONResponse(
+            status_code=202,
+            content={
+                "message": "Document uploaded successfully and processing started",
+                "file_path": saved_file_path,
+                "warnings": validation_result.get("warnings", [])
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"Error uploading document: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/upload-multiple")
+async def upload_multiple_documents(
+    background_tasks: BackgroundTasks,
+    files: List[UploadFile] = File(...)
+):
+    """
+    Upload multiple documents for processing
+    """
+    results = []
+    
+    for file in files:
+        try:
+            # Validate file
+            validation_result = validation_utils.validate_file_upload(
+                filename=file.filename,
+                file_size=file.size,
+                content_type=file.content_type
+            )
+            
+            if validation_result["valid"]:
+                file_content = await file.read()
+                saved_file_path = file_utils.save_uploaded_file(file_content, file.filename)
+                
+                background_tasks.add_task(
+                    process_document,
+                    saved_file_path,
+                    file.filename,
+                    file.content_type
+                )
+                
+                results.append({
+                    "filename": file.filename,
+                    "status": "accepted",
+                    "file_path": saved_file_path
+                })
+            else:
+                results.append({
+                    "filename": file.filename,
+                    "status": "rejected",
+                    "errors": validation_result["errors"]
+                })
+                
+        except Exception as e:
+            results.append({
+                "filename": file.filename,
+                "status": "error",
+                "error": str(e)
+            })
+    
+    return {"results": results}
+
+@router.get("/status/{doc_id}")
+async def get_processing_status(doc_id: str):
+    """
+    Get the processing status of a document
+    """
+    # This would typically check a database or cache for processing status
+    # For now, return a mock response
+    return {
+        "doc_id": doc_id,
+        "status": "completed",
+        "chunks_processed": 10,
+        "embeddings_generated": 10,
+        "vectors_stored": 10
+    }
+
+async def process_document(
+    file_path: str,
+    filename: str,
+    content_type: str,
+    doc_type: str = "unknown",
+    doc_title: str = None,
+    doc_author: str = None
+):
+    """
+    Process a document: extract text, chunk, generate embeddings, and store
+    """
+    try:
+        logger.info(f"Processing document: {filename}")
+        
+        # Extract text based on file type
+        if content_type == "application/pdf":
+            text = extract_text_from_pdf(file_path)
+        elif content_type.startswith("image/"):
+            text = process_image_with_ocr(file_path)
+        else:
+            # Assume text file
+            with open(file_path, 'r', encoding='utf-8') as f:
+                text = f.read()
+        
+        # Clean text
+        cleaned_text = clean_text(text)
+        
+        # Build document metadata
+        doc_metadata = metadata_builder.build_document_metadata(
+            file_path=file_path,
+            file_type=content_type,
+            content=cleaned_text
+        )
+        
+        # Add additional metadata
+        doc_metadata.update({
+            "doc_type": doc_type,
+            "title": doc_title or filename,
+            "author": doc_author
+        })
+        
+        # Chunk text
+        chunks = legal_chunker.chunk_text(cleaned_text, preserve_sections=True)
+        
+        # Build chunk metadata
+        chunk_metadata_list = metadata_builder.build_metadata(
+            chunks=chunks,
+            doc_id=doc_metadata["doc_id"],
+            doc_metadata=doc_metadata
+        )
+        
+        # Generate embeddings
+        chunk_texts = [chunk["text"] for chunk in chunks]
+        embeddings = embedding_client.get_embeddings(chunk_texts)
+        
+        # Store in vector database
+        upsert_embeddings(embeddings, chunk_metadata_list)
+        
+        # Move file to processed directory
+        processed_path = file_utils.move_to_processed(file_path, doc_metadata["doc_id"])
+        
+        logger.info(f"Successfully processed document: {filename}")
+        
+    except Exception as e:
+        logger.error(f"Error processing document {filename}: {e}")
+        raise

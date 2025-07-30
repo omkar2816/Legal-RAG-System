@@ -1,0 +1,86 @@
+EMPLOYMENT AGREEMENT
+
+This Employment Agreement (the "Agreement") is entered into as of January 15, 2024, by and between:
+
+ABC Corporation, a Delaware corporation with its principal place of business at 123 Business Street, New York, NY 10001 (the "Company")
+
+and
+
+John Smith, an individual residing at 456 Personal Avenue, New York, NY 10002 (the "Employee")
+
+WHEREAS, the Company desires to employ the Employee and the Employee desires to be employed by the Company;
+
+NOW, THEREFORE, in consideration of the mutual promises and covenants contained herein, the parties agree as follows:
+
+ARTICLE I: EMPLOYMENT
+
+Section 1.1: Position and Duties
+The Company hereby employs the Employee as Senior Software Engineer, and the Employee accepts such employment. The Employee shall report to the Chief Technology Officer and shall perform such duties as are customarily performed by a Senior Software Engineer and such other duties as may be assigned by the Company from time to time.
+
+Section 1.2: Term of Employment
+The Employee's employment under this Agreement shall commence on February 1, 2024 (the "Effective Date") and shall continue until terminated in accordance with the provisions of this Agreement.
+
+ARTICLE II: COMPENSATION AND BENEFITS
+
+Section 2.1: Base Salary
+The Company shall pay the Employee an annual base salary of $120,000, payable in accordance with the Company's normal payroll practices, subject to applicable withholdings and deductions.
+
+Section 2.2: Bonus
+The Employee shall be eligible for an annual performance bonus of up to 20% of base salary, based on individual and company performance, as determined by the Company in its sole discretion.
+
+Section 2.3: Benefits
+The Employee shall be eligible to participate in the Company's employee benefit plans, including health insurance, dental insurance, vision insurance, and 401(k) plan, in accordance with the terms and conditions of such plans.
+
+ARTICLE III: CONFIDENTIALITY AND INTELLECTUAL PROPERTY
+
+Section 3.1: Confidential Information
+The Employee acknowledges that during the course of employment, the Employee will have access to confidential and proprietary information of the Company, including but not limited to trade secrets, customer lists, business plans, and technical information (collectively, "Confidential Information"). The Employee agrees to maintain the confidentiality of such information and not to disclose it to any third party without the Company's prior written consent.
+
+Section 3.2: Intellectual Property
+The Employee agrees that all inventions, discoveries, improvements, and other intellectual property created, developed, or conceived by the Employee during the course of employment and relating to the Company's business shall be the sole and exclusive property of the Company.
+
+ARTICLE IV: TERMINATION
+
+Section 4.1: Termination by Company
+The Company may terminate the Employee's employment at any time for any reason, with or without cause, upon written notice to the Employee.
+
+Section 4.2: Termination by Employee
+The Employee may terminate employment by providing the Company with at least two weeks' written notice.
+
+Section 4.3: Severance
+In the event of termination without cause, the Employee shall be entitled to severance pay equal to one month's base salary for each year of service, up to a maximum of six months' salary.
+
+ARTICLE V: NON-COMPETITION
+
+Section 5.1: Non-Competition Period
+During employment and for a period of one year following termination, the Employee shall not engage in any business that competes with the Company within a 50-mile radius of the Company's principal place of business.
+
+Section 5.2: Non-Solicitation
+During employment and for a period of two years following termination, the Employee shall not solicit any customers or employees of the Company.
+
+ARTICLE VI: GENERAL PROVISIONS
+
+Section 6.1: Governing Law
+This Agreement shall be governed by and construed in accordance with the laws of the State of New York.
+
+Section 6.2: Entire Agreement
+This Agreement constitutes the entire agreement between the parties and supersedes all prior agreements and understandings, whether written or oral.
+
+Section 6.3: Amendment
+This Agreement may be amended only by a written instrument signed by both parties.
+
+Section 6.4: Severability
+If any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first above written.
+
+ABC CORPORATION
+
+By: _________________________
+Name: Jane Doe
+Title: Chief Executive Officer
+
+JOHN SMITH
+
+Signature: _________________________
+Date: _________________________ 
