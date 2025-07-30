@@ -1,0 +1,13 @@
+PyMuPdf
+faiss-cpu
+numpy
+openai
+langchain
+tiktoken
+sentence-transformers
+fastapi
+pillow
+uvicorn
+python-dotenv
+pytesseract
+pinecone-client
