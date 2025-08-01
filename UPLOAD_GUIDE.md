@@ -177,9 +177,9 @@ curl -X POST "http://localhost:8000/ingest/upload-multiple" \
 - Supported: PDF, DOCX, TXT, PNG, JPG, JPEG
 - Solution: Convert to supported format
 
-#### 3. **OpenAI API Quota Exceeded**
+#### 3. **Voyage AI API Quota Exceeded**
 - Symptoms: 429 errors in logs
-- Solution: Add credits to OpenAI account or use different API key
+- Solution: Add credits to Voyage AI account or use different API key
 
 #### 4. **Pinecone Connection Issues**
 - Symptoms: Vector storage failures

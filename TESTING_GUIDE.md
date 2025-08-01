@@ -27,7 +27,7 @@ This test verifies all core functionality without requiring API calls.
 ```bash
 python test_system.py
 ```
-This test requires valid OpenAI and Pinecone API keys.
+This test requires valid Voyage AI and Pinecone API keys.
 
 ### 3. **API Testing** (Interactive)
 Visit http://localhost:8000/docs for interactive API testing.
@@ -92,11 +92,11 @@ curl -X GET "http://localhost:8000/admin/stats"
 
 ### Common Issues and Solutions
 
-#### 1. **OpenAI API Quota Exceeded**
+#### 1. **Voyage AI API Quota Exceeded**
 **Symptoms**: 429 errors in logs
 **Solution**: 
-- Check your OpenAI API key and billing
-- Add credits to your OpenAI account
+- Check your Voyage AI API key and billing
+- Add credits to your Voyage AI account
 - Or use a different API key
 
 #### 2. **Pinecone Dimension Mismatch**
@@ -175,7 +175,7 @@ pip install -r requirements.txt
 
 ## 🚀 Next Steps After Testing
 
-1. **Set up API Keys**: Add your OpenAI and Pinecone API keys to `.env`
+1. **Set up API Keys**: Add your Voyage AI and Pinecone API keys to `.env`
 2. **Upload Your Documents**: Use the API to upload your legal documents
 3. **Test Real Queries**: Ask questions about your uploaded documents
 4. **Monitor Performance**: Check logs and API response times

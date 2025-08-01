@@ -20,6 +20,15 @@ async def health_check():
     try:
         # Check if Pinecone is accessible
         stats = get_index_stats()
+        # Convert stats to JSON-serializable format
+        if hasattr(stats, 'to_dict'):
+            stats = stats.to_dict()
+        else:
+            try:
+                import json
+                stats = json.loads(json.dumps(stats))
+            except Exception:
+                stats = str(stats)
         return {
             "status": "healthy",
             "pinecone_status": "connected",
@@ -41,6 +50,15 @@ async def get_system_stats():
     try:
         # Get Pinecone index statistics
         index_stats = get_index_stats()
+        # Convert stats to JSON-serializable format
+        if hasattr(index_stats, 'to_dict'):
+            index_stats = index_stats.to_dict()
+        else:
+            try:
+                import json
+                index_stats = json.loads(json.dumps(index_stats))
+            except Exception:
+                index_stats = str(index_stats)
         
         # Get file statistics
         processed_files = file_utils.list_processed_files()
@@ -55,7 +73,7 @@ async def get_system_stats():
                 "chunk_size": settings.CHUNK_SIZE,
                 "chunk_overlap": settings.CHUNK_OVERLAP,
                 "embedding_model": settings.EMBEDDING_MODEL,
-                "llm_model": settings.OPENAI_MODEL
+                "llm_model": settings.VOYAGE_CHAT_MODEL
             }
         }
     except Exception as e:
@@ -113,6 +131,6 @@ async def get_configuration():
         "top_k_results": settings.TOP_K_RESULTS,
         "similarity_threshold": settings.SEARCH_SIMILARITY_THRESHOLD,
         "embedding_model": settings.EMBEDDING_MODEL,
-        "llm_model": settings.OPENAI_MODEL,
+        "llm_model": settings.VOYAGE_CHAT_MODEL,
         "rate_limit_per_minute": settings.RATE_LIMIT_PER_MINUTE
     }

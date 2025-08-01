@@ -1,5 +1,5 @@
 """
-Mock embedding client for testing when OpenAI API is not available
+Mock embedding client for testing when Voyage AI API is not available
 """
 import numpy as np
 import hashlib

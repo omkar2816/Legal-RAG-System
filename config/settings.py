@@ -20,11 +20,12 @@ class Settings:
     PORT = int(os.getenv("PORT", 8000))
     DEBUG = os.getenv("DEBUG", "False").lower() == "true"
     
-    # OpenAI Configuration
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-    OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
-    OPENAI_MAX_TOKENS = int(os.getenv("OPENAI_MAX_TOKENS", 1000))
-    OPENAI_TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", 0.1))
+    # Voyage AI Configuration
+    VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
+    VOYAGE_EMBEDDING_MODEL = os.getenv("VOYAGE_EMBEDDING_MODEL", "voyage-large-2")
+    VOYAGE_CHAT_MODEL = os.getenv("VOYAGE_CHAT_MODEL", "voyage-large-2")
+    VOYAGE_MAX_TOKENS = int(os.getenv("VOYAGE_MAX_TOKENS", 1000))
+    VOYAGE_TEMPERATURE = float(os.getenv("VOYAGE_TEMPERATURE", 0.1))
     
     # Pinecone Configuration
     PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
@@ -33,7 +34,7 @@ class Settings:
     PINECONE_DIMENSION = int(os.getenv("PINECONE_DIMENSION", 1024))  # Match existing index dimension
     
     # Embedding Configuration
-    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")  # 1024 dimensions
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "voyage-large-2")  # 1024 dimensions
     EMBEDDING_BATCH_SIZE = int(os.getenv("EMBEDDING_BATCH_SIZE", 100))
     
     # Chunking Configuration
@@ -103,7 +104,7 @@ class Settings:
     def validate_required_settings(cls) -> bool:
         """Validate that all required settings are present"""
         required_vars = [
-            "OPENAI_API_KEY",
+            "VOYAGE_API_KEY",
             "PINECONE_API_KEY"
         ]
         

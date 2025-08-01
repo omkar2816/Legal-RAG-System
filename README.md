@@ -1,3 +1,7 @@
+# ⚠️ IMPORTANT: Voyage AI Python client only supports embeddings
+
+As of 2024, the Voyage AI Python client does **not** support chat/completions (LLM responses). Only embedding generation is supported. For LLM completions, use the HTTP API directly (if available) or another provider.
+
 # Legal RAG System - Document Q&A
 
 A comprehensive Retrieval-Augmented Generation (RAG) system for legal document question answering.
@@ -62,7 +66,7 @@ legal-rag-system/
 │   ├── pinecone_client.py # Pinecone integration
 │   └── schema.sql         # Database schema
 ├── llm_service/           # LLM integration
-│   ├── llm_client.py      # OpenAI client
+│   ├── llm_client.py      # Voyage AI client
 │   ├── prompt_template.j2 # Prompt templates
 │   └── response_formatter.py # Response formatting
 ├── data/                  # Sample datasets

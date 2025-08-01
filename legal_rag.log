@@ -467,3 +467,245 @@ HTTP response body: {"code":3,"message":"Metadata value must be a string, number
 2025-07-31 02:32:28,133 - api.main - INFO - Starting Legal RAG System...
 2025-07-31 02:32:29,914 - api.main - INFO - Legal RAG System started successfully
 2025-07-31 02:33:36,878 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:20:35,838 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:20:37,544 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:25:48,332 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:26:01,285 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:26:03,074 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:26:46,792 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:26:51,127 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:26:52,841 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:27:55,748 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:27:57,476 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:28:00,150 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:28:03,385 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:28:05,029 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:28:27,744 - api.main - ERROR - Unhandled exception: [TypeError("'_thread.RLock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2025-08-01 13:28:49,997 - api.main - ERROR - Unhandled exception: [TypeError("'_thread.RLock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2025-08-01 13:29:15,130 - api.main - ERROR - Unhandled exception: [TypeError("'_thread.RLock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2025-08-01 13:29:33,532 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:31:36,759 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:31:38,830 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:32:01,567 - api.main - ERROR - Unhandled exception: [TypeError("'_thread.RLock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2025-08-01 13:38:39,411 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:38:40,893 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:38:57,154 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_133857_a145cc13.txt
+2025-08-01 13:38:57,155 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 13:38:57,155 - api.routes.ingest - ERROR - Error processing document sample_contract.txt: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:38:57,155 - api.main - ERROR - Unhandled exception: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:39:12,844 - api.routes.admin - ERROR - Error getting system stats: 'Settings' object has no attribute 'OPENAI_MODEL'
+2025-08-01 13:39:18,934 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:41:30,116 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250801_134130_646c7d83.pdf
+2025-08-01 13:41:30,117 - api.routes.ingest - INFO - Processing document: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-01 13:41:31,139 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-01 13:41:31,139 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-01 13:41:31,141 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-01 13:41:31,144 - embeddings.mock_embed_client - INFO - Generated 16 mock embeddings
+2025-08-01 13:41:35,046 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:11:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1283', 'x-pinecone-request-id': '969568221612345448', 'x-envoy-upstream-service-time': '52', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:41:35,046 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:11:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1283', 'x-pinecone-request-id': '969568221612345448', 'x-envoy-upstream-service-time': '52', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:41:35,061 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250801_134135_646c7d83.pdf
+2025-08-01 13:41:35,062 - api.routes.ingest - INFO - Processing document: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-01 13:41:35,454 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-01 13:41:35,455 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-01 13:41:35,455 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-01 13:41:35,456 - embeddings.mock_embed_client - INFO - Generated 16 mock embeddings
+2025-08-01 13:41:37,859 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:11:38 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1172', 'x-pinecone-request-id': '9111127087531803521', 'x-envoy-upstream-service-time': '3', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:41:37,861 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:11:38 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1172', 'x-pinecone-request-id': '9111127087531803521', 'x-envoy-upstream-service-time': '3', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:43:03,418 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:43:05,055 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:43:46,986 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250801_134346_646c7d83.pdf
+2025-08-01 13:43:46,987 - api.routes.ingest - INFO - Processing document: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-01 13:43:47,460 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-01 13:43:47,461 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-01 13:43:47,461 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-01 13:43:47,462 - embeddings.mock_embed_client - INFO - Generated 16 mock embeddings
+2025-08-01 13:43:50,162 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:13:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1246', 'x-pinecone-request-id': '8556524506385078245', 'x-envoy-upstream-service-time': '36', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:43:50,162 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:13:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1246', 'x-pinecone-request-id': '8556524506385078245', 'x-envoy-upstream-service-time': '36', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:43:50,171 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250801_134350_646c7d83.pdf
+2025-08-01 13:43:50,172 - api.routes.ingest - INFO - Processing document: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-01 13:43:50,588 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-01 13:43:50,588 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-01 13:43:50,588 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-01 13:43:50,589 - embeddings.mock_embed_client - INFO - Generated 16 mock embeddings
+2025-08-01 13:43:53,645 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:13:53 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1250', 'x-pinecone-request-id': '720375741227278605', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:43:53,646 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:13:53 GMT', 'Content-Type': 'application/json', 'Content-Length': '138', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1250', 'x-pinecone-request-id': '720375741227278605', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got 'null' for field 'doc_author'","details":[]}
+
+2025-08-01 13:45:17,987 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:47:46,186 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_nda_20250801_134746_88ddc325.txt
+2025-08-01 13:47:46,187 - api.routes.ingest - INFO - Processing document: sample_nda.txt
+2025-08-01 13:47:46,187 - api.routes.ingest - ERROR - Error processing document sample_nda.txt: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:47:46,188 - api.main - ERROR - Unhandled exception: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:47:46,306 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:47:49,048 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:47:50,629 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:47:50,630 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:47:53,173 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:47:54,863 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:47:57,155 - api.routes.admin - ERROR - Error getting system stats: 'Settings' object has no attribute 'OPENAI_MODEL'
+2025-08-01 13:48:28,039 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_nda_20250801_134828_88ddc325.txt
+2025-08-01 13:48:28,040 - api.routes.ingest - INFO - Processing document: sample_nda.txt
+2025-08-01 13:48:28,040 - api.routes.ingest - ERROR - Error processing document sample_nda.txt: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:48:28,040 - api.main - ERROR - Unhandled exception: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:48:28,174 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:48:30,893 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:48:32,347 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:48:32,348 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:48:34,921 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:48:36,407 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:48:38,538 - api.main - ERROR - Unhandled exception: [TypeError("'_thread.RLock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2025-08-01 13:49:11,246 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_nda_20250801_134911_88ddc325.txt
+2025-08-01 13:49:11,247 - api.routes.ingest - INFO - Processing document: sample_nda.txt
+2025-08-01 13:49:11,247 - api.routes.ingest - ERROR - Error processing document sample_nda.txt: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:49:11,248 - api.main - ERROR - Unhandled exception: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:49:11,443 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:49:14,070 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:49:15,552 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:49:15,553 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:49:18,175 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:49:19,482 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:49:49,975 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 13:49:52,914 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:49:55,531 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:49:57,089 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:49:57,090 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:49:59,760 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:50:01,116 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:53:17,079 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_135317_a145cc13.txt
+2025-08-01 13:53:17,080 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 13:53:17,080 - api.routes.ingest - ERROR - Error processing document sample_contract.txt: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:53:17,080 - api.main - ERROR - Unhandled exception: 'NoneType' object has no attribute 'startswith'
+2025-08-01 13:53:17,218 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:53:19,979 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:53:21,763 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:53:21,764 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:53:24,212 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:53:25,812 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:54:31,705 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:54:33,256 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:54:35,386 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:54:37,619 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 13:54:39,305 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 13:55:25,879 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 13:58:49,562 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_nda_20250801_135849_88ddc325.txt
+2025-08-01 13:58:49,563 - api.routes.ingest - INFO - Processing document: sample_nda.txt
+2025-08-01 13:58:50,375 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 13:58:53,201 - api.routes.ingest - ERROR - Error processing document sample_nda.txt: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:28:53 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '261', 'x-pinecone-request-id': '6588446659363335996', 'x-envoy-upstream-service-time': '39', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":19....' for field 'legal_terms'","details":[]}
+
+2025-08-01 13:58:53,201 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:28:53 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '261', 'x-pinecone-request-id': '6588446659363335996', 'x-envoy-upstream-service-time': '39', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":19....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:00:15,262 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 14:00:17,008 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 14:01:50,065 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_140150_a145cc13.txt
+2025-08-01 14:01:50,066 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:01:50,715 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:01:52,175 - api.routes.ingest - ERROR - Error processing document sample_contract.txt: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:31:52 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '235', 'x-pinecone-request-id': '8803343657696923520', 'x-envoy-upstream-service-time': '27', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:01:52,175 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:31:52 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '235', 'x-pinecone-request-id': '8803343657696923520', 'x-envoy-upstream-service-time': '27', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:01:52,183 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_140152_a145cc13.txt
+2025-08-01 14:01:52,183 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:01:52,726 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:01:55,298 - api.routes.ingest - ERROR - Error processing document sample_contract.txt: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:31:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '277', 'x-pinecone-request-id': '553868746747045210', 'x-envoy-upstream-service-time': '38', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:01:55,299 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:31:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '277', 'x-pinecone-request-id': '553868746747045210', 'x-envoy-upstream-service-time': '38', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:03:54,659 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_140354_a145cc13.txt
+2025-08-01 14:03:54,660 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:03:55,261 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:04:24,112 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 14:04:42,572 - urllib3.connectionpool - WARNING - Retrying (JitterRetry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='hackrx1-9wjymg0.svc.aped-4627-b74a.pinecone.io', port=443): Read timed out. (read timeout=None)")': /vectors/upsert
+2025-08-01 14:04:44,194 - api.routes.ingest - ERROR - Error processing document sample_contract.txt: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:34:44 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '239', 'x-pinecone-request-id': '5643598869748976268', 'x-envoy-upstream-service-time': '20', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:04:44,194 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:34:44 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '239', 'x-pinecone-request-id': '5643598869748976268', 'x-envoy-upstream-service-time': '20', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:06:07,258 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_140607_a145cc13.txt
+2025-08-01 14:06:07,260 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:06:07,950 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:06:09,497 - api.routes.ingest - ERROR - Error processing document sample_contract.txt: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:36:09 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '243', 'x-pinecone-request-id': '3671150867597624679', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:06:09,497 - api.main - ERROR - Unhandled exception: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Fri, 01 Aug 2025 08:36:09 GMT', 'Content-Type': 'application/json', 'Content-Length': '156', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '243', 'x-pinecone-request-id': '3671150867597624679', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata value must be a string, number, boolean or list of strings, got '{\"agreement\":13....' for field 'legal_terms'","details":[]}
+
+2025-08-01 14:06:09,617 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 14:06:12,123 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 14:06:13,659 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 14:06:13,660 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-01 14:06:16,189 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 14:06:17,687 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 14:18:32,753 - api.main - INFO - Starting Legal RAG System...
+2025-08-01 14:18:34,098 - api.main - INFO - Legal RAG System started successfully
+2025-08-01 14:19:11,295 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_141911_a145cc13.txt
+2025-08-01 14:19:11,296 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:19:12,801 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:19:15,896 - utils.file_utils - INFO - Moved file to processed: processed\sample_contract_20250801_141911_a145cc13.txt_20250801_084911.txt
+2025-08-01 14:19:15,897 - api.routes.ingest - INFO - Successfully processed document: sample_contract.txt
+2025-08-01 14:19:15,899 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_141915_a145cc13.txt
+2025-08-01 14:19:15,900 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:19:17,433 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:19:18,985 - utils.file_utils - INFO - Moved file to processed: processed\sample_contract_20250801_141915_a145cc13.txt_20250801_084915.txt
+2025-08-01 14:19:18,985 - api.routes.ingest - INFO - Successfully processed document: sample_contract.txt
+2025-08-01 14:19:23,705 - utils.file_utils - INFO - Saved uploaded file: uploads\sample_contract_20250801_141923_a145cc13.txt
+2025-08-01 14:19:23,705 - api.routes.ingest - INFO - Processing document: sample_contract.txt
+2025-08-01 14:19:25,412 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-01 14:19:27,083 - utils.file_utils - INFO - Moved file to processed: processed\sample_contract_20250801_141923_a145cc13.txt_20250801_084923.txt
+2025-08-01 14:19:27,083 - api.routes.ingest - INFO - Successfully processed document: sample_contract.txt

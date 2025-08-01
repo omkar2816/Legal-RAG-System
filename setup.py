@@ -113,7 +113,7 @@ def main():
     print()
     print("Next steps:")
     print("1. Edit .env file and add your API keys:")
-    print("   - OPENAI_API_KEY: Get from https://platform.openai.com/")
+    print("   - VOYAGE_API_KEY: Get from https://platform.voyageai.com/")
     print("   - PINECONE_API_KEY: Get from https://app.pinecone.io/")
     print()
     print("2. Start the application:")

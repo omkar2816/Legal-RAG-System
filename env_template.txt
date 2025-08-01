@@ -1,0 +1,35 @@
+# Legal RAG System - Environment Configuration
+# Copy this file to .env and fill in your API keys
+
+# Voyage AI Configuration
+VOYAGE_API_KEY=your_voyage_api_key_here
+VOYAGE_EMBEDDING_MODEL=voyage-large-2
+VOYAGE_CHAT_MODEL=voyage-large-2
+VOYAGE_MAX_TOKENS=1000
+VOYAGE_TEMPERATURE=0.1
+
+# Pinecone Configuration
+PINECONE_API_KEY=your_pinecone_api_key_here
+PINECONE_ENVIRONMENT=your_pinecone_environment_here
+PINECONE_INDEX_NAME=legal-documents
+
+# Embedding Configuration
+EMBEDDING_MODEL=voyage-large-2
+EMBEDDING_BATCH_SIZE=100
+
+# Document Processing
+CHUNK_SIZE=1000
+CHUNK_OVERLAP=200
+TOP_K_RESULTS=5
+SEARCH_SIMILARITY_THRESHOLD=0.7
+
+# System Configuration
+SYSTEM_PROMPT=You are a helpful legal assistant. Answer questions based on the provided legal documents. Be accurate and cite specific sections when possible.
+LOG_LEVEL=INFO
+MAX_FILE_SIZE=52428800  # 50MB in bytes
+
+# Optional: Database Configuration (if using persistent storage)
+# DATABASE_URL=sqlite:///legal_rag.db
+
+# Optional: Redis Configuration (for caching)
+# REDIS_URL=redis://localhost:6379 

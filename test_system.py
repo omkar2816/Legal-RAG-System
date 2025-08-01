@@ -140,7 +140,7 @@ def test_embedding_generation():
     ]
     
     print(f"Would generate embeddings for {len(sample_texts)} texts")
-    print("Note: This would require valid OpenAI API key")
+    print("Note: This would require valid Voyage AI API key")
     print()
 
 def test_llm_response():
@@ -153,7 +153,7 @@ def test_llm_response():
     
     print(f"Question: {question}")
     print(f"Context: {context}")
-    print("Note: This would require valid OpenAI API key")
+    print("Note: This would require valid Voyage AI API key")
     print()
 
 def main():
@@ -167,7 +167,7 @@ def main():
     print("Checking Configuration...")
     if not settings.validate_required_settings():
         print("❌ Missing required environment variables")
-        print("Please set OPENAI_API_KEY and PINECONE_API_KEY")
+        print("Please set VOYAGE_API_KEY and PINECONE_API_KEY")
         print("You can copy env_template.txt to .env and fill in your keys")
         return
     else:

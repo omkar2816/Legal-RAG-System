@@ -4,7 +4,7 @@
 
 ### 1. Prerequisites
 - Python 3.8 or higher
-- OpenAI API key
+- Voyage AI API key
 - Pinecone API key
 
 ### 2. Quick Setup
@@ -24,7 +24,7 @@ cp env_template.txt .env
 ### 3. Configure API Keys
 Edit the `.env` file and add your API keys:
 ```env
-OPENAI_API_KEY=your_openai_api_key_here
+VOYAGE_API_KEY=your_voyage_api_key_here
 PINECONE_API_KEY=your_pinecone_api_key_here
 ```
 
@@ -118,8 +118,8 @@ python test_system.py
    - Verify Pinecone API key and environment
    - Check if index exists in your Pinecone account
 
-3. **OpenAI API Errors**
-   - Verify OpenAI API key
+3. **Voyage AI API Errors**
+- Verify Voyage AI API key
    - Check API usage limits and billing
 
 4. **File Upload Issues**

@@ -1,7 +1,7 @@
 """
-LLM client for generating responses using OpenAI
+LLM client for generating responses using Voyage AI
 """
-from openai import OpenAI
+from voyageai import Client
 from typing import List, Dict, Any, Optional
 from config.settings import settings
 import logging
@@ -9,56 +9,32 @@ import logging
 logger = logging.getLogger(__name__)
 
 class LLMClient:
-    """Client for interacting with OpenAI LLM"""
+    """Client for interacting with Voyage AI LLM (embeddings only as of 2024).
     
+    Note: The Voyage AI Python client does NOT support chat/completions as of now.
+    For LLM completions, use the HTTP API directly if available, or use another provider.
+    """
     def __init__(self, model: str = None, temperature: float = None, max_tokens: int = None):
-        self.model = model or settings.OPENAI_MODEL
-        self.temperature = temperature or settings.OPENAI_TEMPERATURE
-        self.max_tokens = max_tokens or settings.OPENAI_MAX_TOKENS
-        self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
-    
-    def generate_response(self, prompt: str, context: str = None, 
-                         system_prompt: str = None) -> str:
+        self.model = model or settings.VOYAGE_CHAT_MODEL
+        self.temperature = temperature or settings.VOYAGE_TEMPERATURE
+        self.max_tokens = max_tokens or settings.VOYAGE_MAX_TOKENS
+        self.client = Client(api_key=settings.VOYAGE_API_KEY)
+
+    def generate_response(self, prompt: str, context: str = None, system_prompt: str = None) -> str:
         """
-        Generate response using LLM
-        
-        Args:
-            prompt: User prompt
-            context: Context information
-            system_prompt: System prompt
-        
-        Returns:
-            Generated response
+        Generate response using LLM (NOT IMPLEMENTED for Voyage AI Python client)
         """
-        messages = []
-        
-        # Add system message
-        if system_prompt:
-            messages.append({"role": "system", "content": system_prompt})
-        else:
-            messages.append({"role": "system", "content": settings.SYSTEM_PROMPT})
-        
-        # Add context if provided
-        if context:
-            full_prompt = f"Context: {context}\n\nQuestion: {prompt}"
-        else:
-            full_prompt = prompt
-        
-        messages.append({"role": "user", "content": full_prompt})
-        
-        try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=messages,
-                temperature=self.temperature,
-                max_tokens=self.max_tokens
-            )
-            
-            return response.choices[0].message.content
-            
-        except Exception as e:
-            logger.error(f"Error generating LLM response: {e}")
-            return f"Error generating response: {str(e)}"
+        raise NotImplementedError(
+            "Voyage AI Python client does not support chat/completions. "
+            "Use the HTTP API directly if available, or use another provider."
+        )
+        # Example template for HTTP API usage (uncomment and fill in if HTTP API is available):
+        # import requests
+        # url = "https://api.voyageai.com/v1/chat/completions"
+        # headers = {"Authorization": f"Bearer {settings.VOYAGE_API_KEY}", "Content-Type": "application/json"}
+        # data = {"model": self.model, "messages": [{"role": "user", "content": prompt}], "max_tokens": self.max_tokens, "temperature": self.temperature}
+        # response = requests.post(url, headers=headers, json=data)
+        # return response.json()["choices"][0]["message"]["content"]
     
     def generate_legal_response(self, question: str, context_chunks: List[Dict[str, Any]]) -> str:
         """
@@ -150,7 +126,7 @@ class LLMClient:
 # Global LLM client instance
 llm_client = LLMClient()
 
-def call_llm(prompt: str, model: str = "gpt-3.5-turbo") -> str:
+def call_llm(prompt: str, model: str = "voyage-large-2") -> str:
     """
     Convenience function for LLM calls (legacy support)
     

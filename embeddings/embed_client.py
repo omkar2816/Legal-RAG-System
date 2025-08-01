@@ -11,11 +11,11 @@ import os
 logger = logging.getLogger(__name__)
 
 class EmbeddingClient:
-    """Client for generating embeddings using OpenAI"""
+    """Client for generating embeddings using Voyage AI"""
     
     def __init__(self, model: str = None):
         self.model = model or settings.EMBEDDING_MODEL
-        api_key = settings.voyage_API_KEY # or rely on VOYAGE_API_KEY env var
+        api_key = settings.VOYAGE_API_KEY
         self.client = Client(api_key=api_key)
     
     def get_embeddings(self, text_list: List[str], batch_size: int = None) -> List[List[float]]:
@@ -39,12 +39,13 @@ class EmbeddingClient:
             batch = text_list[i:i + batch_size]
             
             try:
-                response = self.client.embeddings.create(
-                    input=batch,
+                # Voyage AI embedding API
+                response = self.client.embed(
+                    texts=batch,
                     model=self.model
                 )
                 
-                batch_embeddings = [d.embedding for d in response.data]
+                batch_embeddings = response.embeddings
                 all_embeddings.extend(batch_embeddings)
                 
                 logger.info(f"Generated embeddings for batch {i//batch_size + 1}")
@@ -52,7 +53,7 @@ class EmbeddingClient:
             except Exception as e:
                 logger.error(f"Error generating embeddings for batch {i//batch_size + 1}: {e}")
                 
-                # Try to use mock embeddings if OpenAI API fails
+                # Try to use mock embeddings if Voyage AI API fails
                 try:
                     from embeddings.mock_embed_client import mock_embedding_client
                     logger.info("Falling back to mock embeddings")
@@ -86,13 +87,13 @@ class EmbeddingClient:
         Returns:
             Embedding dimension
         """
-        # OpenAI embedding model dimensions
-        if "text-embedding-3-small" in self.model:
+        # Voyage AI embedding model dimensions
+        if "voyage-large-2" in self.model:
             return 1024
-        elif "text-embedding-3-large" in self.model:
-            return 3072
-        elif "text-embedding-ada-002" in self.model:
-            return 1536
+        elif "voyage-code-2" in self.model:
+            return 1024
+        elif "voyage-law-2" in self.model:
+            return 1024
         else:
             # Default to 1024 for compatibility with existing index
             return 1024

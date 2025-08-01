@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Simple test script for the Legal RAG System
-This script demonstrates the basic functionality without requiring OpenAI API calls
+This script demonstrates the basic functionality without requiring Voyage AI API calls
 """
 import os
 import sys
@@ -223,7 +223,7 @@ def main():
     print("Checking Configuration...")
     if not settings.validate_required_settings():
         print("⚠️  Missing required environment variables")
-        print("   Note: OpenAI API key is required for full functionality")
+        print("   Note: Voyage AI API key is required for full functionality")
         print("   You can copy env_template.txt to .env and fill in your keys")
     else:
         print("✅ Configuration looks good")
@@ -247,7 +247,7 @@ def main():
         print(f"   - API endpoints: ✅ Working")
         print()
         print("🎯 Next steps:")
-        print("1. Set up your OpenAI API key in .env file for full functionality")
+        print("1. Set up your Voyage AI API key in .env file for full functionality")
         print("2. Run: uvicorn api.main:app --reload")
         print("3. Visit: http://localhost:8000/docs")
         print("4. Upload documents and test queries")

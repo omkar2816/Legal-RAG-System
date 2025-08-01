@@ -72,7 +72,7 @@ pc.create_index(
 
 ### Default Settings
 - **Index Name**: `legal-rag-index`
-- **Dimension**: `1536` (OpenAI ada-002 embedding dimension)
+- **Dimension**: `1024` (Voyage AI embedding dimension)
 - **Metric**: `cosine` (similarity metric)
 - **Type**: Serverless (AWS)
 - **Region**: Based on your environment setting
@@ -209,7 +209,7 @@ print("Available indexes:", pc.list_indexes().names())
 - [Pinecone Documentation](https://docs.pinecone.io/)
 - [Pinecone Console](https://app.pinecone.io/)
 - [Pinecone Python Client](https://github.com/pinecone-io/pinecone-python)
-- [OpenAI Embeddings](https://platform.openai.com/docs/guides/embeddings)
+- [Voyage AI Embeddings](https://platform.voyageai.com/docs/embeddings)
 
 ## 📞 Support
 

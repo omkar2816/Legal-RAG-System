@@ -154,12 +154,12 @@ async def process_document(
         logger.info(f"Processing document: {filename}")
         
         # Extract text based on file type
-        if content_type == "application/pdf":
+        if content_type and content_type == "application/pdf":
             text = extract_text_from_pdf(file_path)
-        elif content_type.startswith("image/"):
+        elif content_type and content_type.startswith("image/"):
             text = process_image_with_ocr(file_path)
         else:
-            # Assume text file
+            # Assume text file (default for .txt files)
             with open(file_path, 'r', encoding='utf-8') as f:
                 text = f.read()
         
@@ -177,7 +177,7 @@ async def process_document(
         doc_metadata.update({
             "doc_type": doc_type,
             "title": doc_title or filename,
-            "author": doc_author
+            "author": doc_author or "Unknown"
         })
         
         # Chunk text

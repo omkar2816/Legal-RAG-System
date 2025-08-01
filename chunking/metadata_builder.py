@@ -86,10 +86,20 @@ class MetadataBuilder:
             metadata.update({
                 "doc_type": doc_metadata.get('doc_type', 'unknown'),
                 "doc_title": doc_metadata.get('title', ''),
-                "doc_author": doc_metadata.get('author', ''),
+                "doc_author": doc_metadata.get('author', 'Unknown'),
                 "doc_date": doc_metadata.get('date', ''),
                 "doc_source": doc_metadata.get('source', ''),
                 "doc_category": doc_metadata.get('category', ''),
+            })
+        else:
+            # Ensure all required fields have default values
+            metadata.update({
+                "doc_type": "unknown",
+                "doc_title": "",
+                "doc_author": "Unknown",
+                "doc_date": "",
+                "doc_source": "",
+                "doc_category": "",
             })
         
         # Add legal term analysis
@@ -134,8 +144,13 @@ class MetadataBuilder:
         legal_word_count = sum(term_counts.values())
         legal_density = legal_word_count / total_words if total_words > 0 else 0
         
+        # Convert term_counts to a list of strings for Pinecone compatibility
+        legal_terms_list = []
+        for term, count in term_counts.items():
+            legal_terms_list.extend([term] * count)  # Add term once for each occurrence
+        
         return {
-            "legal_terms": term_counts,
+            "legal_terms": legal_terms_list,  # Now a list of strings instead of dict
             "legal_term_count": legal_word_count,
             "legal_density": legal_density,
             "is_legal_document": legal_density > 0.01  # 1% threshold

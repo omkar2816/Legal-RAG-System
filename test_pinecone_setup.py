@@ -33,8 +33,8 @@ def test_pinecone_setup():
             print("❌ PINECONE_API_KEY not found in .env")
             return False
         
-        if not settings.OPENAI_API_KEY:
-            print("❌ OPENAI_API_KEY not found in .env")
+        if not settings.VOYAGE_API_KEY:
+    print("❌ VOYAGE_API_KEY not found in .env")
             return False
         
         print("✅ Environment variables loaded")
