@@ -184,6 +184,72 @@ class LegalDocumentChunker:
         text = re.sub(r'([A-Z])\s+([A-Z])', r'\1\2', text)  # Fix spacing in legal terms
         
         return text.strip()
+    
+    def chunk_policy_by_section(self, pdf_text: str) -> List[Dict[str, Any]]:
+        """
+        Chunk policy documents by numbered sections (e.g., 6.1, 4.5, etc.)
+        
+        Args:
+            pdf_text: Policy document text
+        
+        Returns:
+            List of chunks with section metadata
+        """
+        # Pattern to match numbered sections like "6.1 COVERAGE", "4.5 EXCLUSIONS"
+        sections = re.split(r'\n?(\d+(\.\d+)?\s+[A-Z][^\n]*)', pdf_text)
+        chunks = []
+        
+        for i in range(1, len(sections), 3):  # capture titles and content
+            if i + 1 < len(sections):
+                title = sections[i].strip()
+                content = sections[i + 1].strip()
+                
+                # Skip empty sections
+                if not title or not content:
+                    continue
+                
+                # Extract section anchor (e.g., "6.1", "4.5")
+                section_anchor = title.split()[0] if title.split() else ""
+                
+                chunks.append({
+                    "section_title": title,
+                    "text": content,
+                    "chunk_id": f"section_{section_anchor.replace('.', '_')}",
+                    "metadata": {
+                        "section_anchor": section_anchor,
+                        "section_type": "numbered_policy_section",
+                        "word_count": len(content.split()),
+                        "chunking_method": "policy_section"
+                    }
+                })
+        
+        logger.info(f"Created {len(chunks)} policy sections from document")
+        return chunks
+    
+    def chunk_by_document_type(self, text: str, doc_type: str = "unknown") -> List[Dict[str, Any]]:
+        """
+        Choose appropriate chunking method based on document type
+        
+        Args:
+            text: Document text
+            doc_type: Type of document (policy, contract, etc.)
+        
+        Returns:
+            List of chunks with metadata
+        """
+        # Clean text first
+        cleaned_text = self.clean_text(text)
+        
+        # Choose chunking method based on document type
+        if doc_type.lower() in ['policy', 'insurance_policy', 'health_policy']:
+            # Use policy-specific section chunking
+            return self.chunk_policy_by_section(cleaned_text)
+        elif doc_type.lower() in ['contract', 'agreement', 'legal_contract']:
+            # Use legal section chunking
+            return self.chunk_text(cleaned_text, preserve_sections=True)
+        else:
+            # Default to general chunking
+            return self.chunk_text(cleaned_text, preserve_sections=False)
 
 def sliding_window(text: str, window_size: int = 500, overlap: int = 100) -> List[str]:
     """

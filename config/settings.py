@@ -46,6 +46,21 @@ class Settings:
     TOP_K_RESULTS = int(os.getenv("TOP_K_RESULTS", 5))
     SEARCH_SIMILARITY_THRESHOLD = float(os.getenv("SEARCH_SIMILARITY_THRESHOLD", 0.7))
     
+    # Advanced Retrieval Thresholds
+    MIN_SIMILARITY_THRESHOLD = float(os.getenv("MIN_SIMILARITY_THRESHOLD", 0.2))
+    HIGH_SIMILARITY_THRESHOLD = float(os.getenv("HIGH_SIMILARITY_THRESHOLD", 0.8))
+    MEDIUM_SIMILARITY_THRESHOLD = float(os.getenv("MEDIUM_SIMILARITY_THRESHOLD", 0.5))
+    
+    # Threshold-based filtering
+    ENABLE_THRESHOLD_FILTERING = os.getenv("ENABLE_THRESHOLD_FILTERING", "true").lower() == "true"
+    ADAPTIVE_THRESHOLD = os.getenv("ADAPTIVE_THRESHOLD", "true").lower() == "true"
+    MIN_RESULTS_REQUIRED = int(os.getenv("MIN_RESULTS_REQUIRED", 1))
+    
+    # Keyword anchoring backup
+    ENABLE_KEYWORD_ANCHORING = os.getenv("ENABLE_KEYWORD_ANCHORING", "true").lower() == "true"
+    KEYWORD_ANCHORING_PRIORITY = os.getenv("KEYWORD_ANCHORING_PRIORITY", "high").lower()
+    MAX_KEYWORD_RESULTS = int(os.getenv("MAX_KEYWORD_RESULTS", 3))
+    
     # File Processing Configuration
     MAX_FILE_SIZE = int(os.getenv("MAX_FILE_SIZE", 50 * 1024 * 1024))  # 50MB
     ALLOWED_EXTENSIONS = {

@@ -180,8 +180,8 @@ async def process_document(
             "author": doc_author or "Unknown"
         })
         
-        # Chunk text
-        chunks = legal_chunker.chunk_text(cleaned_text, preserve_sections=True)
+        # Chunk text based on document type
+        chunks = legal_chunker.chunk_by_document_type(cleaned_text, doc_type)
         
         # Build chunk metadata
         chunk_metadata_list = metadata_builder.build_metadata(
