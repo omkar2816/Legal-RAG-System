@@ -1,7 +1,7 @@
 """
 Embedding client for generating vector representations of text
 """
-from openai import OpenAI
+from voyageai import Client
 import numpy as np
 from typing import List, Union
 from config.settings import settings
@@ -15,7 +15,8 @@ class EmbeddingClient:
     
     def __init__(self, model: str = None):
         self.model = model or settings.EMBEDDING_MODEL
-        self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        api_key = settings.voyage_API_KEY # or rely on VOYAGE_API_KEY env var
+        self.client = Client(api_key=api_key)
     
     def get_embeddings(self, text_list: List[str], batch_size: int = None) -> List[List[float]]:
         """
