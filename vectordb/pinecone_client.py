@@ -95,6 +95,63 @@ def query_embeddings(query_vector, top_k=None, filter_dict=None):
     
     return results
 
+# Get all vectors (for keyword search)
+def get_all_vectors(filter_dict=None, limit=10000):
+    """
+    Get all vectors from Pinecone index (for keyword search)
+    
+    Args:
+        filter_dict: Optional filter criteria
+        limit: Maximum number of vectors to retrieve
+    
+    Returns:
+        List of vectors with metadata
+    """
+    try:
+        index = get_index()
+        
+        # Use fetch to get all vectors
+        # First, get index stats to understand the data
+        stats = index.describe_index_stats()
+        total_vectors = stats.get('total_vector_count', 0)
+        
+        if total_vectors == 0:
+            return []
+        
+        # For keyword search, we need to get all vectors
+        # Since Pinecone doesn't have a direct "get all" method,
+        # we'll use a dummy query to get a large number of results
+        # Create a dummy vector of zeros for the query
+        dimension = stats.get('dimension', 1024)
+        dummy_vector = [0.0] * dimension
+        
+        # Query with a very high top_k to get most/all vectors
+        results = index.query(
+            vector=dummy_vector,
+            top_k=min(limit, total_vectors),
+            include_metadata=True,
+            filter=filter_dict
+        )
+        
+        if not results or 'matches' not in results:
+            return []
+        
+        # Convert to list format
+        vectors = []
+        for match in results['matches']:
+            vector_data = {
+                'id': match.get('id', ''),
+                'metadata': match.get('metadata', {}),
+                'score': match.get('score', 0.0)
+            }
+            vectors.append(vector_data)
+        
+        return vectors
+        
+    except Exception as e:
+        print(f"Error getting all vectors: {str(e)}")
+        return []
+
 # Delete vectors by document ID
 def delete_by_doc_id(doc_id):
     """

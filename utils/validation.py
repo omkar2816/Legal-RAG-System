@@ -188,8 +188,8 @@ class ValidationUtils:
         # Remove potentially dangerous characters
         text = re.sub(r'[<>{}]', '', text)
         
-        # Limit length
-        max_length = 10000  # Reasonable limit for text processing
+        # Limit length - increased to allow longer responses
+        max_length = 50000  # Increased limit for comprehensive responses
         if len(text) > max_length:
             text = text[:max_length] + "..."
         

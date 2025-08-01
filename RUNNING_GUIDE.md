@@ -32,10 +32,13 @@ cp env_template.txt .env
 
 2. Edit the `.env` file and add your API keys:
 ```env
-# Voyage AI Configuration
+# Voyage AI Configuration (for embeddings)
 VOYAGE_API_KEY=your_actual_voyage_api_key_here
 VOYAGE_EMBEDDING_MODEL=voyage-large-2
-VOYAGE_CHAT_MODEL=voyage-large-2
+
+# Groq Configuration (for chat completions)
+GROQ_API_KEY=your_actual_groq_api_key_here
+GROQ_CHAT_MODEL=llama3-8b-8192
 
 # Pinecone Configuration
 PINECONE_API_KEY=your_actual_pinecone_api_key_here
@@ -45,7 +48,10 @@ PINECONE_INDEX_NAME=legal-documents
 
 ### Step 4: Verify Installation
 ```bash
-# Test Voyage AI integration
+# Test Groq integration
+python test_groq_integration.py
+
+# Test Voyage AI embeddings
 python test_voyage_integration.py
 
 # Test functionality
@@ -110,10 +116,10 @@ curl -X POST "http://localhost:8000/query/ask?question=What%20is%20the%20employe
 
 ## ⚠️ Important Notes
 
-### Voyage AI Limitations
-- **Embeddings**: ✅ Fully supported and working
-- **LLM Completions**: ❌ Not supported in Python client (as of 2024)
-- **Workaround**: Use HTTP API directly or another provider for chat/completions
+### AI Provider Configuration
+- **Voyage AI**: ✅ Used for embeddings (voyage-large-2)
+- **Groq**: ✅ Used for chat completions (llama3-8b-8192)
+- **Both providers**: Required for full functionality
 
 ### Sample Questions to Try
 - "What is the employee's base salary?"

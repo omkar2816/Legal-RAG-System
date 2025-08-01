@@ -1,12 +1,15 @@
 # Legal RAG System - Environment Configuration
 # Copy this file to .env and fill in your API keys
 
-# Voyage AI Configuration
+# Voyage AI Configuration (for embeddings)
 VOYAGE_API_KEY=your_voyage_api_key_here
 VOYAGE_EMBEDDING_MODEL=voyage-large-2
-VOYAGE_CHAT_MODEL=voyage-large-2
-VOYAGE_MAX_TOKENS=1000
-VOYAGE_TEMPERATURE=0.1
+
+# Groq Configuration (for chat completions)
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_CHAT_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
+GROQ_MAX_TOKENS=8000
+GROQ_TEMPERATURE=0.1
 
 # Pinecone Configuration
 PINECONE_API_KEY=your_pinecone_api_key_here
@@ -18,10 +21,19 @@ EMBEDDING_MODEL=voyage-large-2
 EMBEDDING_BATCH_SIZE=100
 
 # Document Processing
-CHUNK_SIZE=1000
-CHUNK_OVERLAP=200
+CHUNK_SIZE=800
+CHUNK_OVERLAP=300
 TOP_K_RESULTS=5
 SEARCH_SIMILARITY_THRESHOLD=0.7
+
+# Accuracy Improvement Settings
+MIN_SIMILARITY_THRESHOLD=0.4
+MEDIUM_SIMILARITY_THRESHOLD=0.6
+HIGH_SIMILARITY_THRESHOLD=0.8
+ENABLE_QUERY_ENHANCEMENT=true
+ENABLE_HYBRID_SEARCH=true
+ENABLE_MULTI_STAGE_RETRIEVAL=true
+ENABLE_SEMANTIC_CHUNKING=true
 
 # System Configuration
 SYSTEM_PROMPT=You are a helpful legal assistant. Answer questions based on the provided legal documents. Be accurate and cite specific sections when possible.

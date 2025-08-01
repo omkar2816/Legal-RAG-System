@@ -73,7 +73,7 @@ async def get_system_stats():
                 "chunk_size": settings.CHUNK_SIZE,
                 "chunk_overlap": settings.CHUNK_OVERLAP,
                 "embedding_model": settings.EMBEDDING_MODEL,
-                "llm_model": settings.VOYAGE_CHAT_MODEL
+                "llm_model": settings.GROQ_CHAT_MODEL
             }
         }
     except Exception as e:
@@ -131,6 +131,6 @@ async def get_configuration():
         "top_k_results": settings.TOP_K_RESULTS,
         "similarity_threshold": settings.SEARCH_SIMILARITY_THRESHOLD,
         "embedding_model": settings.EMBEDDING_MODEL,
-        "llm_model": settings.VOYAGE_CHAT_MODEL,
+        "llm_model": settings.GROQ_CHAT_MODEL,
         "rate_limit_per_minute": settings.RATE_LIMIT_PER_MINUTE
     }
