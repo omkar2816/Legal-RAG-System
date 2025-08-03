@@ -740,7 +740,6 @@ make status         # System status
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📞 Support
 
 ### Getting Help
 1. Check the troubleshooting section above
@@ -759,8 +758,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Consider contributing the feature yourself
 
 ---
-
-**Built with ❤️ for the legal community**
 
 *Last updated: 2025-08-01*
 *Version: 1.0.0*
