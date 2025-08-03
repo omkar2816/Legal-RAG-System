@@ -241,10 +241,10 @@ CHUNK_OVERLAP = 200        # Overlap between chunks
 
 # Search Configuration
 TOP_K_RESULTS = 5          # Number of search results
-SEARCH_SIMILARITY_THRESHOLD = 0.7  # Similarity threshold
+SEARCH_SIMILARITY_THRESHOLD = 0.8  # Similarity threshold
 
 # API Configuration
-VOYAGE_MODEL = "voyage-large-2"    # Embedding model
+VOYAGE_MODEL = "voyage-3-large"    # Embedding model
 PINECONE_DIMENSION = 1024          # Vector dimension
 ```
 
