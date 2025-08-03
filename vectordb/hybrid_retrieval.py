@@ -16,7 +16,7 @@ class HybridRetrievalEngine:
     def __init__(self):
         self.semantic_weight = 0.7
         self.keyword_weight = 0.3
-        self.min_confidence = 0.4
+        self.min_confidence = 0.8
         self.max_keyword_search_vectors = 1000  # Limit for keyword search
         
     def hybrid_search(

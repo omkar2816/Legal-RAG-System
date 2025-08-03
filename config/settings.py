@@ -21,38 +21,38 @@ class Settings:
     DEBUG = os.getenv("DEBUG", "False").lower() == "true"
     
     # Voyage AI Configuration (for embeddings)
-    VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
-    VOYAGE_EMBEDDING_MODEL = os.getenv("VOYAGE_EMBEDDING_MODEL", "voyage-large-2")
+    VOYAGE_API_KEY = os.getenv("voyage_API_KEY")
+    VOYAGE_EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
     
     # Groq Configuration (for chat completions)
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    GROQ_CHAT_MODEL = os.getenv("GROQ_CHAT_MODEL", "meta-llama/llama-4-scout-17b-16e-instruct")
-    GROQ_MAX_TOKENS = int(os.getenv("GROQ_MAX_TOKENS", 8000))  # Further increased for complete answers
-    GROQ_TEMPERATURE = float(os.getenv("GROQ_TEMPERATURE", 0.1))
+    GROQ_CHAT_MODEL = os.getenv("GROQ_CHAT_MODEL")
+    GROQ_MAX_TOKENS = int(os.getenv("GROQ_MAX_TOKENS"))  # Further increased for complete answers
+    GROQ_TEMPERATURE = float(os.getenv("GROQ_TEMPERATURE"))
     
     # Pinecone Configuration
     PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-    PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT", "us-east-1")
-    PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "hackrx")
-    PINECONE_DIMENSION = int(os.getenv("PINECONE_DIMENSION", 1024))  # Match existing index dimension
+    PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
+    PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
+    PINECONE_DIMENSION = int(os.getenv("PINECONE_DIMENSION"))  # Match existing index dimension
     
     # Embedding Configuration
-    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "voyage-large-2")  # 1024 dimensions
-    EMBEDDING_BATCH_SIZE = int(os.getenv("EMBEDDING_BATCH_SIZE", 100))
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")  # 1024 dimensions
+    EMBEDDING_BATCH_SIZE = int(os.getenv("EMBEDDING_BATCH_SIZE"))
     
     # Chunking Configuration
-    CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", 800))
-    CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", 300))
-    MAX_CHUNK_SIZE = int(os.getenv("MAX_CHUNK_SIZE", 1200))
+    CHUNK_SIZE = int(os.getenv("CHUNK_SIZE"))
+    CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP"))
+    MAX_CHUNK_SIZE = int(os.getenv("MAX_CHUNK_SIZE"))
     
     # Search Configuration
-    TOP_K_RESULTS = int(os.getenv("TOP_K_RESULTS", 5))
-    SEARCH_SIMILARITY_THRESHOLD = float(os.getenv("SEARCH_SIMILARITY_THRESHOLD", 0.7))
+    TOP_K_RESULTS = int(os.getenv("TOP_K_RESULTS"))
+    SEARCH_SIMILARITY_THRESHOLD = float(os.getenv("SEARCH_SIMILARITY_THRESHOLD"))
     
     # Advanced Retrieval Thresholds
-    MIN_SIMILARITY_THRESHOLD = float(os.getenv("MIN_SIMILARITY_THRESHOLD", 0.4))
-    HIGH_SIMILARITY_THRESHOLD = float(os.getenv("HIGH_SIMILARITY_THRESHOLD", 0.8))
-    MEDIUM_SIMILARITY_THRESHOLD = float(os.getenv("MEDIUM_SIMILARITY_THRESHOLD", 0.6))
+    MIN_SIMILARITY_THRESHOLD = float(os.getenv("MIN_SIMILARITY_THRESHOLD", 0.6))
+    HIGH_SIMILARITY_THRESHOLD = float(os.getenv("HIGH_SIMILARITY_THRESHOLD", 0.9))
+    MEDIUM_SIMILARITY_THRESHOLD = float(os.getenv("MEDIUM_SIMILARITY_THRESHOLD", 0.7))
     
     # Threshold-based filtering
     ENABLE_THRESHOLD_FILTERING = os.getenv("ENABLE_THRESHOLD_FILTERING", "true").lower() == "true"
@@ -78,7 +78,8 @@ class Settings:
         "txt": "text/plain",
         "png": "image/png",
         "jpg": "image/jpeg",
-        "jpeg": "image/jpeg"
+        "jpeg": "image/jpeg",
+        "eml": "message/rfc822"
     }
     
     # OCR Configuration
@@ -169,7 +170,7 @@ class Settings:
     ENABLE_EXPLAINABILITY = os.getenv("ENABLE_EXPLAINABILITY", "true").lower() == "true"
     
     # Performance Optimization Settings
-    MIN_CONFIDENCE_THRESHOLD = float(os.getenv("MIN_CONFIDENCE_THRESHOLD", 0.6))
+    MIN_CONFIDENCE_THRESHOLD = float(os.getenv("MIN_CONFIDENCE_THRESHOLD", 0.8))
     MAX_RESPONSE_LENGTH = int(os.getenv("MAX_RESPONSE_LENGTH", 4000))
     ENABLE_LEAN_RESPONSES = os.getenv("ENABLE_LEAN_RESPONSES", "true").lower() == "true"
     
