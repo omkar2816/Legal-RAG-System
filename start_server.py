@@ -63,7 +63,8 @@ def start_server():
         return False
     
     # Get host and port from environment variables or use defaults
-    host = os.getenv("HOST", "0.0.0.0")
+    # Always use 0.0.0.0 as host on Render to ensure proper port binding
+    host = "0.0.0.0"
     port = int(os.getenv("PORT", "8000"))
     
     print(f"\n🌐 Server will be available at:")
@@ -76,11 +77,12 @@ def start_server():
     
     try:
         # Start uvicorn server
+        # Always use 0.0.0.0 as host on Render to ensure proper port binding
         cmd = [
             sys.executable, "-m", "uvicorn",
             "api.main:app",
             "--reload",
-            "--host", host,
+            "--host", "0.0.0.0",
             "--port", str(port)
         ]
         
