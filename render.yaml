@@ -1,0 +1,29 @@
+# Render deployment configuration
+services:
+  # Web service configuration
+  - type: web
+    name: legal-rag-system
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        fromService:
+          type: web
+          name: legal-rag-system
+          envVarKey: PORT
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      # The following environment variables should be set in the Render dashboard
+      # - key: VOYAGE_API_KEY
+      #   sync: false
+      # - key: PINECONE_API_KEY
+      #   sync: false
+      # - key: PINECONE_ENVIRONMENT
+      #   sync: false
+      # - key: PINECONE_INDEX_NAME
+      #   value: legal-documents
+    autoDeploy: true

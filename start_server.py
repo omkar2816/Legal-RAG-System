@@ -62,10 +62,14 @@ def start_server():
     if not test_imports():
         return False
     
-    print("\n🌐 Server will be available at:")
-    print("   - API Documentation: http://localhost:8000/docs")
-    print("   - Health Check: http://localhost:8000/health")
-    print("   - Alternative Docs: http://localhost:8000/redoc")
+    # Get host and port from environment variables or use defaults
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8000"))
+    
+    print(f"\n🌐 Server will be available at:")
+    print(f"   - API Documentation: http://{host if host != '0.0.0.0' else 'localhost'}:{port}/docs")
+    print(f"   - Health Check: http://{host if host != '0.0.0.0' else 'localhost'}:{port}/health")
+    print(f"   - Alternative Docs: http://{host if host != '0.0.0.0' else 'localhost'}:{port}/redoc")
     print("\n📁 Sample documents available in data/legal_docs/")
     print("🔧 Press Ctrl+C to stop the server")
     print("=" * 50)
@@ -76,8 +80,8 @@ def start_server():
             sys.executable, "-m", "uvicorn",
             "api.main:app",
             "--reload",
-            "--host", "127.0.0.1",
-            "--port", "8000"
+            "--host", host,
+            "--port", str(port)
         ]
         
         subprocess.run(cmd)
@@ -104,4 +108,4 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
-    main() 
+    main()

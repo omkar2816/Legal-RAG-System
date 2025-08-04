@@ -11,7 +11,7 @@ sentence-transformers
 tiktoken
 
 # Vector database
-pinecone-client
+pinecone>=2.2.4  # Updated from pinecone-client to pinecone
 faiss-cpu
 
 # Document processing
