@@ -1,9 +1,12 @@
 """
 Query API endpoints for the Legal RAG System
 """
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Depends
 from typing import List, Dict, Any, Optional
 import logging
+
+from api.auth import get_current_user
+from config.settings import settings
 
 from embeddings.embed_client import embedding_client
 from vectordb.pinecone_client import query_embeddings
@@ -23,7 +26,8 @@ async def ask_legal_question(
     top_k: int = Query(5, description="Number of results to retrieve"),
     similarity_threshold: float = Query(0.7, description="Similarity threshold for results"),
     doc_filter: Optional[str] = Query(None, description="Filter by document ID"),
-    doc_type_filter: Optional[str] = Query(None, description="Filter by document type")
+    doc_type_filter: Optional[str] = Query(None, description="Filter by document type"),
+    current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None
 ):
     """
     Ask a legal question and get an AI-generated answer based on document context

@@ -8,6 +8,7 @@ import logging
 import sys
 
 from api.routes import ingest, query, admin
+from api.auth import router as auth_router
 from vectordb.pinecone_client import create_index
 from config.settings import settings
 
@@ -27,7 +28,18 @@ logger = logging.getLogger(__name__)
 app = FastAPI(
     title=settings.API_TITLE,
     version=settings.API_VERSION,
-    description=settings.API_DESCRIPTION,
+    description=settings.API_DESCRIPTION + """
+    
+    ## Authentication
+    
+    This API uses Bearer Token Authentication. To use protected endpoints:
+    
+    1. Get a token by sending a POST request to `/auth/token` with your username and password
+    2. Register a new user by sending a POST request to `/auth/register`
+    3. Include the token in the Authorization header of your requests: `Authorization: Bearer {token}`
+    
+    Some endpoints are public and don't require authentication.
+    """,
     docs_url="/docs",
     redoc_url="/redoc"
 )
@@ -41,7 +53,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
+# Include routers - Authentication and HackRx endpoints first for better API docs organization
+app.include_router(auth_router, prefix="/auth")
+app.include_router(ingest.hackrx_router, prefix="/hackrx")
 app.include_router(ingest.router)
 app.include_router(query.router)
 app.include_router(admin.router)

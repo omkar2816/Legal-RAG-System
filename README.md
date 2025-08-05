@@ -17,6 +17,8 @@ A comprehensive Retrieval-Augmented Generation (RAG) system for legal document q
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [API Reference](#api-reference)
+  - [Authentication](#authentication)
+  - [HackRx Run API](#hackrx-run-api)
 - [Testing](#testing)
 - [Troubleshooting](#troubleshooting)
 - [Project Structure](#project-structure)
@@ -318,6 +320,90 @@ print(response.json())
 3. Test endpoints directly from the browser
 
 ## 🔌 API Reference
+
+### Authentication
+
+#### `POST /auth/register`
+Register a new user.
+
+**Parameters:**
+- `username` (required): User's username
+- `password` (required): User's password
+- `email` (required): User's email address
+
+**Response:**
+```json
+{
+  "username": "user123",
+  "email": "user@example.com",
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer"
+}
+```
+
+#### `POST /auth/token`
+Get authentication token.
+
+**Parameters:**
+- `username` (required): User's username
+- `password` (required): User's password
+
+**Response:**
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer"
+}
+```
+
+### HackRx Run API
+
+#### `POST /hackrx/run`
+Process a document URL and answer questions about it.
+
+**Parameters:**
+This endpoint accepts both JSON and form data inputs:
+
+*JSON Input:*
+- `url` (required): URL of the document to process
+- `question` (required): Question to ask about the document
+
+*Form Data Input:*
+- `url` (required): URL of the document to process
+- `question` (required): Question to ask about the document
+
+**Example Usage:**
+
+*Using JSON:*
+```bash
+curl -X POST "http://localhost:8000/hackrx/run" \
+  -H "Content-Type: application/json" \
+  -d '{"url":"https://example.com/document.pdf","question":"What are the key points?"}'
+```
+
+*Using Form Data:*
+```bash
+curl -X POST "http://localhost:8000/hackrx/run" \
+  -H "Content-Type: multipart/form-data" \
+  -F "url=https://example.com/document.pdf" \
+  -F "question=What are the key points?"
+```
+
+**Response:**
+```json
+{
+  "answer": "Based on the document, the key points are...",
+  "sources": [
+    {
+      "doc_id": "document_001",
+      "chunk_id": "section_1",
+      "text": "The document states...",
+      "similarity": 0.92
+    }
+  ],
+  "processing_time": 2.5
+}
+```
 
 ### Document Ingestion Endpoints
 

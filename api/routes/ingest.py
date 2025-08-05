@@ -1,10 +1,19 @@
 """
 Document ingestion API endpoints
 """
-from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException, BackgroundTasks, Depends
 from fastapi.responses import JSONResponse
 from typing import List, Dict, Any
 import logging
+import requests
+import os
+import re
+from datetime import datetime
+from pathlib import Path
+
+from api.auth import get_current_user
+from config.settings import settings
+from api.models import AnswerResponse, DocumentQuestionRequest
 
 from ingestion.pdf_extractor import extract_text_from_pdf
 from ingestion.ocrProcessor import process_image_with_ocr
@@ -20,13 +29,130 @@ from config.settings import settings
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/ingest", tags=["Document Ingestion"])
 
+# Router for HackRx endpoints without the /ingest prefix
+hackrx_router = APIRouter(tags=["HackRx"])
+
+@hackrx_router.post("/run")
+async def run_api(
+    request: DocumentQuestionRequest = None,
+    background_tasks: BackgroundTasks = None,
+    current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None,
+    documents: str = Form(None),
+    questions: str = Form(None)
+):
+    """
+    Run API
+    
+    Args:
+        request: Request containing document URL and questions (JSON body)
+        documents: Document URL (form field)
+        questions: Questions (form field)
+        
+    Returns:
+        Success status and processing details
+    """
+    try:
+        # Handle both JSON and form data inputs
+        if request is not None:
+            # JSON input
+            url = request.documents.strip('` ')
+            questions_list = request.questions
+        else:
+            # Form input
+            url = documents.strip('` ') if documents else None
+            # Convert comma-separated questions string to list
+            questions_list = [q.strip() for q in questions.split(',')] if questions else []
+            
+        if not url:
+            raise HTTPException(status_code=400, detail="Document URL is required")
+            
+        if not questions_list:
+            raise HTTPException(status_code=400, detail="At least one question is required")
+            
+        questions = questions_list
+        
+        logger.info(f"Downloading document from URL: {url}")
+        # Download file from URL
+        response = requests.get(url, stream=True, timeout=30)
+        response.raise_for_status()  # Raise exception for HTTP errors
+        
+        # Get filename from URL or Content-Disposition header
+        filename = None
+        if "Content-Disposition" in response.headers:
+            content_disposition = response.headers["Content-Disposition"]
+            filename_match = re.search(r'filename="?([^"]+)"?', content_disposition)
+            if filename_match:
+                filename = filename_match.group(1)
+        
+        if not filename:
+            # Extract filename from URL
+            filename = os.path.basename(url.split('?')[0])
+            
+        if not filename or filename == '':
+            # Use a default filename if none could be determined
+            filename = f"document_from_url_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+        
+        # Get content type
+        content_type = response.headers.get('Content-Type', '')
+        
+        # Validate file
+        file_size = int(response.headers.get('Content-Length', 0))
+        validation_result = validation_utils.validate_file_upload(
+            filename=filename,
+            file_size=file_size,
+            content_type=content_type
+        )
+        
+        if not validation_result["valid"]:
+            raise HTTPException(
+                status_code=400,
+                detail={"errors": validation_result["errors"], "warnings": validation_result["warnings"]}
+            )
+        
+        # Save downloaded file
+        file_content = response.content
+        saved_file_path = file_utils.save_uploaded_file(file_content, filename)
+        
+        # Process document in background
+        background_tasks.add_task(
+            process_document,
+            saved_file_path,
+            filename,
+            content_type,
+            "policy",  # Document type
+            None,  # Document title
+            None  # No author information
+        )
+        
+        # Return success status and processing details
+        return JSONResponse(
+            status_code=202,
+            content={
+                "status": "success",
+                "message": "Document downloaded successfully and processing started",
+                "file_path": saved_file_path,
+                "filename": filename,
+                "content_type": content_type,
+                "file_size": file_size,
+                "questions_received": len(questions),
+                "questions": questions,
+                "processing_status": "in_progress",
+                "warnings": validation_result.get("warnings", [])
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"Error processing document from URL: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @router.post("/upload")
 async def upload_document(
     background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     doc_type: str = "unknown",
     doc_title: str = None,
-    doc_author: str = None
+    doc_author: str = None,
+    current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None
 ):
     """
     Upload and process a document for the RAG system

@@ -97,6 +97,13 @@ class Settings:
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     
+    # Authentication Configuration
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "")
+    ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
+    ENABLE_AUTH = os.getenv("ENABLE_AUTH", "true").lower() == "true"
+    ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+    ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "password")
+    
     # Legal Document Specific Settings
     LEGAL_TERMS = [
         "whereas", "hereby", "hereinafter", "party", "parties", "agreement",
@@ -218,4 +225,4 @@ class Settings:
         return True
 
 # Global settings instance
-settings = Settings() 
+settings = Settings()

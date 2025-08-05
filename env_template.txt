@@ -40,8 +40,15 @@ SYSTEM_PROMPT=You are a helpful legal assistant. Answer questions based on the p
 LOG_LEVEL=INFO
 MAX_FILE_SIZE=52428800  # 50MB in bytes
 
+# Authentication Configuration
+JWT_SECRET_KEY=your_secret_key_here  # Use a strong, unique secret key
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+ENABLE_AUTH=true
+ADMIN_USERNAME=admin  # Change this in production
+ADMIN_PASSWORD=password  # Change this in production
+
 # Optional: Database Configuration (if using persistent storage)
 # DATABASE_URL=sqlite:///legal_rag.db
 
 # Optional: Redis Configuration (for caching)
-# REDIS_URL=redis://localhost:6379 
+# REDIS_URL=redis://localhost:6379

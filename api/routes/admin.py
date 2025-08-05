@@ -1,16 +1,21 @@
 """
 Admin API endpoints for the Legal RAG System
 """
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from typing import List, Dict, Any
 import logging
+
+from api.auth import get_current_user
 
 from vectordb.pinecone_client import get_index_stats, delete_by_doc_id
 from utils.file_utils import file_utils
 from config.settings import settings
+from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/admin", tags=["Administration"])
+
+# Use authentication from api.auth module
 
 @router.get("/health")
 async def health_check():
@@ -43,7 +48,7 @@ async def health_check():
         }
 
 @router.get("/stats")
-async def get_system_stats():
+async def get_system_stats(current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None):
     """
     Get system statistics
     """
@@ -81,7 +86,7 @@ async def get_system_stats():
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.delete("/documents/{doc_id}")
-async def delete_document(doc_id: str):
+async def delete_document(doc_id: str, current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None):
     """
     Delete a document and all its associated vectors
     """
@@ -119,7 +124,7 @@ async def cleanup_system():
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/config")
-async def get_configuration():
+async def get_configuration(current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None):
     """
     Get current system configuration (non-sensitive)
     """
@@ -134,3 +139,5 @@ async def get_configuration():
         "llm_model": settings.GROQ_CHAT_MODEL,
         "rate_limit_per_minute": settings.RATE_LIMIT_PER_MINUTE
     }
+
+# Token endpoint moved to api.auth module
