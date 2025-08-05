@@ -104,3 +104,7 @@ async def health():
     Simple health check endpoint
     """
     return {"status": "healthy", "service": "Legal RAG System"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
