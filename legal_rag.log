@@ -1114,3 +1114,423 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-08-05 20:58:35,277 - api.main - INFO - Starting Legal RAG System...
 2025-08-05 20:58:37,121 - api.main - INFO - Legal RAG System started successfully
 2025-08-05 20:59:20,186 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:36:20,672 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:36:22,625 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 21:39:58,497 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:40:03,944 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:40:05,910 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 21:42:18,037 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:42:23,857 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:42:26,423 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 21:44:13,032 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:44:21,114 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:44:23,103 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 21:46:58,839 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 21:47:32,182 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_214732_646c7d83.pdf
+2025-08-05 21:47:32,182 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 21:47:32,652 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: 'NoneType' object has no attribute 'strip'
+2025-08-05 21:47:32,652 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: 'NoneType' object has no attribute 'strip'
+2025-08-05 21:47:32,653 - vectordb.advanced_retrieval - INFO - Original query: 'what does the policy define as a “preexisting diseases”?' -> Normalized: 'what does the policy define as a “preexisting diseases”?'
+2025-08-05 21:47:33,218 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-05 21:47:37,615 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:37,617 - vectordb.advanced_retrieval - INFO - Original query: 'what is the waiting period for cataract treatment under this policy?' -> Normalized: 'what is the waiting period for cataract treatment under this policy?'
+2025-08-05 21:47:37,986 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-05 21:47:40,559 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:40,560 - vectordb.advanced_retrieval - INFO - Original query: 'what is the maximum co-premium percentage applicable under this policy? when does it apply?' -> Normalized: 'what is the maximum co-premium percentage applicable under this policy? when does it apply?'
+2025-08-05 21:47:41,407 - embeddings.embed_client - INFO - Generated embeddings for batch 1
+2025-08-05 21:47:44,239 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:44,240 - vectordb.advanced_retrieval - INFO - Original query: 'is ayush inpatient treatment covered? if yes' -> Normalized: 'is ayush inpatient treatment covered? if yes'
+2025-08-05 21:47:44,519 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:47:44,521 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:47:44,526 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:47:44,530 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:47:47,037 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:47,038 - vectordb.advanced_retrieval - INFO - Original query: 'under what conditions?' -> Normalized: 'under what conditions?'
+2025-08-05 21:47:47,357 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:47:47,359 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:47:47,359 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:47:47,361 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:47:50,104 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:50,105 - vectordb.advanced_retrieval - INFO - Original query: 'what sub-expensess apply to room rent and icu charges?' -> Normalized: 'what sub-expensess apply to room rent and icu charges?'
+2025-08-05 21:47:50,385 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:47:50,387 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:47:50,388 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:47:50,389 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:47:52,830 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:52,831 - vectordb.advanced_retrieval - INFO - Original query: 'does the policy cover dental treatment? if yes' -> Normalized: 'does the policy cover dental treatment? if yes'
+2025-08-05 21:47:53,110 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:47:53,111 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:47:53,112 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:47:53,113 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:47:55,844 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:55,845 - vectordb.advanced_retrieval - INFO - Original query: 'under what circumstances?' -> Normalized: 'under what circumstances?'
+2025-08-05 21:47:56,177 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:47:56,179 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:47:56,180 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:47:56,181 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:47:58,991 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:47:58,992 - vectordb.advanced_retrieval - INFO - Original query: 'what expenses is offered for modern treatments like robotic surgery or stem cell therapy?' -> Normalized: 'what expenses is offered for modern treatments like robotic surgery or stem cell therapy?'
+2025-08-05 21:47:59,669 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:47:59,670 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:47:59,671 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:47:59,672 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:02,156 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:02,157 - vectordb.advanced_retrieval - INFO - Original query: 'is cosmetic surgery covered under this policy?' -> Normalized: 'is cosmetic surgery covered under this policy?'
+2025-08-05 21:48:02,430 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:02,432 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:02,433 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:02,434 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:05,045 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:05,047 - vectordb.advanced_retrieval - INFO - Original query: 'does the policy cover maternity expenses or ivf treatments?' -> Normalized: 'does the policy cover maternity expenses or ivf treatments?'
+2025-08-05 21:48:05,625 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:05,626 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:05,627 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:05,628 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:08,075 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:08,076 - vectordb.advanced_retrieval - INFO - Original query: 'is treatment for obesity covered under any conditions?' -> Normalized: 'is treatment for obesity covered under any conditions?'
+2025-08-05 21:48:08,538 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:08,539 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:08,540 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:08,541 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:11,111 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:11,112 - vectordb.advanced_retrieval - INFO - Original query: 'what is the cumulative bonus structure and when does it reduce?' -> Normalized: 'what is the cumulative bonus structure and when does it reduce?'
+2025-08-05 21:48:11,457 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:11,459 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:11,459 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:11,460 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:14,264 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:14,265 - vectordb.advanced_retrieval - INFO - Original query: 'what are the portability and migration rules under this policy?' -> Normalized: 'what are the portability and migration rules under this policy?'
+2025-08-05 21:48:14,576 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:14,577 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:14,578 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:14,579 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:17,114 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:17,115 - vectordb.advanced_retrieval - INFO - Original query: 'what is the procedure to file a reimbursement claim and what documents are required?' -> Normalized: 'what is the procedure to file a reimbursement claim and what documents are required?'
+2025-08-05 21:48:17,449 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:17,450 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:17,451 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:17,451 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:19,142 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:48:19,143 - vectordb.advanced_retrieval - INFO - Original query: 'what happens if a fraudulent claim is made?' -> Normalized: 'what happens if a fraudulent claim is made?'
+2025-08-05 21:48:19,468 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 21:48:19,469 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 21:48:19,470 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 21:48:19,471 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 21:48:21,277 - vectordb.advanced_retrieval - ERROR - Error in advanced retrieval: '<' not supported between instances of 'float' and 'NoneType'
+2025-08-05 21:54:16,935 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:54:21,984 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:54:23,730 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 21:58:31,792 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:58:36,335 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:58:38,000 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 21:58:38,002 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 21:58:42,746 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 21:58:44,738 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:00:04,870 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 22:00:06,966 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:01:16,880 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 22:01:58,178 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 22:01:58,178 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 22:01:58,179 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 22:01:58,184 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_220158_646c7d83.pdf
+2025-08-05 22:01:58,185 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 22:01:58,186 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 22:01:58,187 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 22:01:58,505 - api.routes.ingest - INFO - PDF extraction completed in 0.32 seconds
+2025-08-05 22:01:58,518 - api.routes.ingest - INFO - Text cleaning completed in 0.01 seconds
+2025-08-05 22:01:58,530 - api.routes.ingest - INFO - Metadata building completed in 0.01 seconds
+2025-08-05 22:01:58,531 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 22:01:59,688 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 22:01:59,690 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 22:01:59,692 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 22:01:59,693 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 22:01:59,694 - api.routes.ingest - INFO - Embedding generation completed in 1.15 seconds
+2025-08-05 22:02:04,336 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 6.15 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 16:32:04 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '544', 'x-pinecone-request-id': '2275715217358485209', 'x-envoy-upstream-service-time': '51', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:02:04,338 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 16:32:04 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '544', 'x-pinecone-request-id': '2275715217358485209', 'x-envoy-upstream-service-time': '51', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:02:04,339 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 22:02:04,340 - api.routes.ingest - INFO - Total request processing time: 6.16 seconds
+2025-08-05 22:23:26,993 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 22:45:43,446 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 22:45:45,625 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:46:36,037 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 22:47:27,305 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 22:47:27,306 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 22:47:27,307 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 22:47:27,314 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_224727_646c7d83.pdf
+2025-08-05 22:47:27,315 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 22:47:27,316 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 22:47:27,317 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 22:47:27,697 - api.routes.ingest - INFO - PDF extraction completed in 0.38 seconds
+2025-08-05 22:47:27,709 - api.routes.ingest - INFO - Text cleaning completed in 0.01 seconds
+2025-08-05 22:47:27,723 - api.routes.ingest - INFO - Metadata building completed in 0.01 seconds
+2025-08-05 22:47:27,724 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 22:47:28,737 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 22:47:28,738 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 22:47:28,742 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 22:47:28,744 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 22:47:28,745 - api.routes.ingest - INFO - Embedding generation completed in 1.01 seconds
+2025-08-05 22:47:33,252 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 5.94 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:17:33 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '684', 'x-pinecone-request-id': '5956163842507471080', 'x-envoy-upstream-service-time': '24', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:47:33,254 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:17:33 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '684', 'x-pinecone-request-id': '5956163842507471080', 'x-envoy-upstream-service-time': '24', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:47:33,255 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 22:47:33,255 - api.routes.ingest - INFO - Total request processing time: 5.95 seconds
+2025-08-05 22:50:38,066 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 22:50:45,134 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 22:50:47,687 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:51:20,282 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 22:52:04,367 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 22:52:04,368 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 22:52:04,368 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 22:52:04,372 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_225204_646c7d83.pdf
+2025-08-05 22:52:04,372 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 22:52:04,373 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 22:52:04,373 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 22:52:04,509 - api.routes.ingest - INFO - PDF extraction completed in 0.13 seconds
+2025-08-05 22:52:04,517 - api.routes.ingest - INFO - Text cleaning completed in 0.01 seconds
+2025-08-05 22:52:04,523 - api.routes.ingest - INFO - Metadata building completed in 0.01 seconds
+2025-08-05 22:52:04,523 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 22:52:05,272 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 22:52:05,273 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 22:52:05,275 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 22:52:05,277 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 22:52:05,278 - api.routes.ingest - INFO - Embedding generation completed in 0.75 seconds
+2025-08-05 22:52:11,005 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 6.63 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:22:11 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '597', 'x-pinecone-request-id': '4904899629256109507', 'x-envoy-upstream-service-time': '27', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:52:11,006 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:22:11 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '597', 'x-pinecone-request-id': '4904899629256109507', 'x-envoy-upstream-service-time': '27', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:52:11,007 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 22:52:11,007 - api.routes.ingest - INFO - Total request processing time: 6.64 seconds
+2025-08-05 22:54:48,652 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 22:54:51,478 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 22:54:53,123 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:54:53,123 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 22:54:55,673 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 22:54:57,370 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:57:17,015 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 22:57:19,875 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 22:57:22,195 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 22:57:44,866 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 22:58:27,228 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 22:58:27,229 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 22:58:27,229 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 22:58:27,231 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_225827_646c7d83.pdf
+2025-08-05 22:58:27,231 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 22:58:27,232 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 22:58:27,232 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 22:58:27,308 - api.routes.ingest - INFO - PDF extraction completed in 0.08 seconds
+2025-08-05 22:58:27,312 - api.routes.ingest - INFO - Text cleaning completed in 0.00 seconds
+2025-08-05 22:58:27,315 - api.routes.ingest - INFO - Metadata building completed in 0.00 seconds
+2025-08-05 22:58:27,315 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 22:58:28,025 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 22:58:28,025 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 22:58:28,026 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 22:58:28,026 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 22:58:28,026 - api.routes.ingest - INFO - Embedding generation completed in 0.71 seconds
+2025-08-05 22:58:31,284 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 4.05 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:28:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '415', 'x-pinecone-request-id': '8885366204850173647', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:58:31,285 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:28:31 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '415', 'x-pinecone-request-id': '8885366204850173647', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 22:58:31,285 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 22:58:31,285 - api.routes.ingest - INFO - Total request processing time: 4.06 seconds
+2025-08-05 23:00:40,762 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:00:43,577 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:00:45,193 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:05:41,164 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:05:44,394 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:05:45,999 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:05:46,000 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:05:49,099 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:05:50,653 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:08:03,057 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:08:06,032 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:08:07,989 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:08:07,990 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:08:10,633 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:08:12,517 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:09:11,381 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:09:12,827 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:10:01,102 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 23:10:50,710 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 23:10:50,710 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 23:10:50,711 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 23:10:50,712 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_231050_646c7d83.pdf
+2025-08-05 23:10:50,712 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 23:10:50,713 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 23:10:50,713 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 23:10:50,784 - api.routes.ingest - INFO - PDF extraction completed in 0.07 seconds
+2025-08-05 23:10:50,787 - api.routes.ingest - INFO - Text cleaning completed in 0.00 seconds
+2025-08-05 23:10:50,790 - api.routes.ingest - INFO - Metadata building completed in 0.00 seconds
+2025-08-05 23:10:50,790 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 23:10:51,263 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 23:10:51,263 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 23:10:51,264 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 23:10:51,265 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 23:10:51,265 - api.routes.ingest - INFO - Embedding generation completed in 0.47 seconds
+2025-08-05 23:10:55,571 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 4.86 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:40:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1783', 'x-pinecone-request-id': '5155455078469228484', 'x-envoy-upstream-service-time': '22', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 23:10:55,571 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 17:40:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '1783', 'x-pinecone-request-id': '5155455078469228484', 'x-envoy-upstream-service-time': '22', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 23:10:55,571 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 23:10:55,572 - api.routes.ingest - INFO - Total request processing time: 4.86 seconds
+2025-08-05 23:18:08,481 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:18:11,043 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:18:12,879 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:18:55,072 - api.main - INFO - Shutting down Legal RAG System...
+2025-08-05 23:18:57,550 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:18:59,456 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:45:47,006 - api.main - INFO - Starting Legal RAG System...
+2025-08-05 23:45:49,019 - api.main - INFO - Legal RAG System started successfully
+2025-08-05 23:46:24,391 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Omkar Korgaonkar\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-08-05 23:47:30,390 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 23:47:30,391 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 23:47:30,391 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 23:47:30,394 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_234730_646c7d83.pdf
+2025-08-05 23:47:30,395 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 23:47:30,396 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 23:47:30,396 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 23:47:30,588 - api.routes.ingest - INFO - PDF extraction completed in 0.19 seconds
+2025-08-05 23:47:30,598 - api.routes.ingest - INFO - Text cleaning completed in 0.01 seconds
+2025-08-05 23:47:30,608 - api.routes.ingest - INFO - Metadata building completed in 0.01 seconds
+2025-08-05 23:47:30,609 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 23:47:31,177 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 23:47:31,178 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 23:47:31,182 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 23:47:31,185 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 23:47:31,186 - api.routes.ingest - INFO - Embedding generation completed in 0.57 seconds
+2025-08-05 23:47:35,370 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 4.97 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 18:17:37 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '573', 'x-pinecone-request-id': '4584625538441349584', 'x-envoy-upstream-service-time': '19', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 23:47:35,372 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 18:17:37 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '573', 'x-pinecone-request-id': '4584625538441349584', 'x-envoy-upstream-service-time': '19', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 23:47:35,372 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 23:47:35,373 - api.routes.ingest - INFO - Total request processing time: 4.98 seconds
+2025-08-05 23:49:50,251 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-05 23:49:50,252 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-05 23:49:50,252 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-05 23:49:50,255 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250805_234950_646c7d83.pdf
+2025-08-05 23:49:50,256 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-05 23:49:50,256 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-05 23:49:50,257 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-05 23:49:50,378 - api.routes.ingest - INFO - PDF extraction completed in 0.12 seconds
+2025-08-05 23:49:50,383 - api.routes.ingest - INFO - Text cleaning completed in 0.00 seconds
+2025-08-05 23:49:50,389 - api.routes.ingest - INFO - Metadata building completed in 0.01 seconds
+2025-08-05 23:49:50,390 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-05 23:49:50,740 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-05 23:49:50,741 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-05 23:49:50,742 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-05 23:49:50,744 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-05 23:49:50,744 - api.routes.ingest - INFO - Embedding generation completed in 0.35 seconds
+2025-08-05 23:49:53,097 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 2.84 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 18:19:56 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '882', 'x-pinecone-request-id': '1853251271737032073', 'x-envoy-upstream-service-time': '23', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 23:49:53,098 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 18:19:56 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '882', 'x-pinecone-request-id': '1853251271737032073', 'x-envoy-upstream-service-time': '23', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-05 23:49:53,099 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-05 23:49:53,100 - api.routes.ingest - INFO - Total request processing time: 2.85 seconds
+2025-08-06 00:18:06,912 - api.routes.ingest - INFO - Processing request with 1 files and 16 questions
+2025-08-06 00:18:06,913 - api.routes.ingest - INFO - File types: ['application/pdf']
+2025-08-06 00:18:06,913 - api.routes.ingest - INFO - File sizes: [452255]
+2025-08-06 00:18:06,918 - utils.file_utils - INFO - Saved uploaded file: uploads\Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1_20250806_001806_646c7d83.pdf
+2025-08-06 00:18:06,919 - api.routes.ingest - INFO - Processing file: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf (0.43 MB)
+2025-08-06 00:18:06,919 - api.routes.ingest - INFO - Processing document synchronously: Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf
+2025-08-06 00:18:06,920 - api.routes.ingest - INFO - File size: 0.43 MB
+2025-08-06 00:18:07,271 - api.routes.ingest - INFO - PDF extraction completed in 0.35 seconds
+2025-08-06 00:18:07,285 - api.routes.ingest - INFO - Text cleaning completed in 0.01 seconds
+2025-08-06 00:18:07,300 - api.routes.ingest - INFO - Metadata building completed in 0.01 seconds
+2025-08-06 00:18:07,301 - api.routes.ingest - INFO - Chunking completed in 0.00 seconds. Created 1 chunks.
+2025-08-06 00:18:07,883 - voyage - INFO - error_message='You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.' message='Voyage API error received'
+2025-08-06 00:18:07,884 - embeddings.embed_client - ERROR - Error generating embeddings for batch 1: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+2025-08-06 00:18:07,885 - embeddings.embed_client - INFO - Falling back to mock embeddings
+2025-08-06 00:18:07,887 - embeddings.mock_embed_client - INFO - Generated 1 mock embeddings
+2025-08-06 00:18:07,888 - api.routes.ingest - INFO - Embedding generation completed in 0.58 seconds
+2025-08-06 00:18:10,890 - api.routes.ingest - ERROR - Error processing document synchronously Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf after 3.97 seconds: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 18:48:13 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '587', 'x-pinecone-request-id': '7702191637557281815', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-06 00:18:10,891 - api.routes.ingest - ERROR - Error processing document Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf: Document processing failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Tue, 05 Aug 2025 18:48:13 GMT', 'Content-Type': 'application/json', 'Content-Length': '115', 'Connection': 'keep-alive', 'x-pinecone-request-latency-ms': '587', 'x-pinecone-request-id': '7702191637557281815', 'x-envoy-upstream-service-time': '21', 'server': 'envoy'})
+HTTP response body: {"code":3,"message":"Metadata size is 76882 bytes, which exceeds the limit of 40960 bytes per vector","details":[]}
+
+2025-08-06 00:18:10,892 - api.routes.ingest - WARNING - Skipping question processing as no documents were successfully processed
+2025-08-06 00:18:10,893 - api.routes.ingest - INFO - Total request processing time: 3.98 seconds
+2025-08-06 00:25:25,720 - api.main - INFO - Shutting down Legal RAG System...

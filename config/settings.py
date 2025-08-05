@@ -21,7 +21,7 @@ class Settings:
     DEBUG = os.getenv("DEBUG", "False").lower() == "true"
     
     # Voyage AI Configuration (for embeddings)
-    VOYAGE_API_KEY = os.getenv("voyage_API_KEY")
+    VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
     VOYAGE_EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
     
     # Groq Configuration (for chat completions)
