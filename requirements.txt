@@ -29,7 +29,7 @@ pandas
 # Utilities
 requests
 aiofiles
-pydantic
+pydantic[email]
 
 # Development and testing
 pytest
