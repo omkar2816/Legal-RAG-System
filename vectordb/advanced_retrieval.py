@@ -273,6 +273,11 @@ class AdvancedRetrievalEngine:
         Returns:
             Effective threshold value
         """
+        # Ensure we have valid inputs
+        if score is None:
+            logger.warning("Received None score in _calculate_effective_threshold, using base_threshold")
+            return base_threshold
+            
         if not adaptive:
             return base_threshold
         
@@ -281,13 +286,19 @@ class AdvancedRetrievalEngine:
         
         # Enhanced adaptive logic based on score distribution
         if all_scores and len(all_scores) > 1:
-            max_score = max(all_scores)
-            min_score = min(all_scores)
+            # Filter out None values
+            valid_scores = [s for s in all_scores if s is not None]
+            if not valid_scores:
+                logger.warning("No valid scores found in all_scores list")
+                return base_threshold
+                
+            max_score = max(valid_scores)
+            min_score = min(valid_scores)
             score_range = max_score - min_score
-            mean_score = sum(all_scores) / len(all_scores)
+            mean_score = sum(valid_scores) / len(valid_scores)
             
             # Calculate score variance to understand distribution
-            variance = sum((s - mean_score) ** 2 for s in all_scores) / len(all_scores)
+            variance = sum((s - mean_score) ** 2 for s in valid_scores) / len(valid_scores)
             std_dev = variance ** 0.5
             
             # Adaptive threshold based on score characteristics
@@ -311,8 +322,15 @@ class AdvancedRetrievalEngine:
                 effective_threshold = min(effective_threshold, settings.MIN_SIMILARITY_THRESHOLD)
             else:
                 # Medium-quality match - use percentile-based approach
-                sorted_scores = sorted(all_scores)
-                score_percentile = sorted_scores.index(score) / len(sorted_scores)
+                sorted_scores = sorted(valid_scores)
+                # Safely find the score's position in the sorted list
+                try:
+                    score_index = sorted_scores.index(score)
+                    score_percentile = score_index / len(sorted_scores)
+                except ValueError:
+                    # Score not found in the list, use a default percentile
+                    logger.warning(f"Score {score} not found in valid_scores list")
+                    score_percentile = 0.5  # Default to middle percentile
                 if score_percentile > 0.7:  # Top 30% of scores
                     effective_threshold = max(effective_threshold, score - 0.1)
                 else:
@@ -680,4 +698,4 @@ def analyze_query_intent(query: str) -> Dict[str, Any]:
     Returns:
         Dictionary with intent analysis
     """
-    return advanced_retrieval_engine.analyze_query_intent(query) 
+    return advanced_retrieval_engine.analyze_query_intent(query)

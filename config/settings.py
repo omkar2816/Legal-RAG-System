@@ -64,6 +64,7 @@ class Settings:
     ENABLE_HYBRID_SEARCH = os.getenv("ENABLE_HYBRID_SEARCH", "true").lower() == "true"
     ENABLE_MULTI_STAGE_RETRIEVAL = os.getenv("ENABLE_MULTI_STAGE_RETRIEVAL", "true").lower() == "true"
     ENABLE_SEMANTIC_CHUNKING = os.getenv("ENABLE_SEMANTIC_CHUNKING", "true").lower() == "true"
+    ENABLE_SPELL_CORRECTION = os.getenv("ENABLE_SPELL_CORRECTION", "true").lower() == "true"
     
     # Keyword anchoring backup
     ENABLE_KEYWORD_ANCHORING = os.getenv("ENABLE_KEYWORD_ANCHORING", "true").lower() == "true"

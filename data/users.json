@@ -6,5 +6,29 @@
     "full_name": "Omkar Korgaonkar",
     "hashed_password": "$2b$12$cCqi//GG9fxaMrf55g0z6O6FF6vVNV.ROnc8S5oWkQhgyezKjA5hi",
     "created_at": "2025-08-05T10:47:38.308794"
+  },
+  {
+    "id": "b511307b-9706-465d-bc56-b56e92fc775b",
+    "username": "jayesh",
+    "email": "user@example.com",
+    "full_name": "string",
+    "hashed_password": "$2b$12$IUAy6c30Nm/dKraXizeuVe3z/H0lGCYQSHc3JxovjifALL18hkC6i",
+    "created_at": "2025-08-05T19:57:49.478068"
+  },
+  {
+    "id": "0fb1a012-e06d-4259-8dda-426d965029cf",
+    "username": "jay",
+    "email": "user@examle.com",
+    "full_name": "string",
+    "hashed_password": "$2b$12$6CBcANzyy.aVSR5I4cm0xO5fn/m3cN6bwtF7zpbUK99XBKjs0SFNe",
+    "created_at": "2025-08-05T21:15:13.481528"
+  },
+  {
+    "id": "4d3ba2fa-3cfa-426d-bfa5-463c9604113c",
+    "username": "testuser",
+    "email": "test@example.com",
+    "full_name": "Test User",
+    "hashed_password": "$2b$12$7Lq5ufNg796daV5V.nbRyeP9ljvZyq2ZEe2TvMoLFQrldKFUuyen.",
+    "created_at": "2025-08-06T19:31:45.953841"
   }
 ]

@@ -157,6 +157,15 @@ async def ask_legal_question(
             structured_data=structured_data
         )
         
+        # Add spell correction information if available
+        if "original_query" in validation_result and "spell_corrections" in validation_result:
+            formatted_response["query_processing"] = {
+                "original_query": validation_result["original_query"],
+                "processed_query": validation_result["cleaned_query"],
+                "spell_corrections": validation_result["spell_corrections"],
+                "corrections_applied": len(validation_result["spell_corrections"]) > 0
+            }
+        
         # Validate the response structure
         validation_result = ResponseSchemaValidator.validate_response(formatted_response)
         if not validation_result["valid"]:
@@ -267,6 +276,15 @@ async def search_documents(
             "recommendations": []
         }
         
+        # Add spell correction information if available
+        if "original_query" in validation_result and "spell_corrections" in validation_result:
+            response["query_processing"] = {
+                "original_query": validation_result["original_query"],
+                "processed_query": validation_result["cleaned_query"],
+                "spell_corrections": validation_result["spell_corrections"],
+                "corrections_applied": len(validation_result["spell_corrections"]) > 0
+            }
+        
         # Add recommendations based on results
         if len(results) < 3:
             search_response["recommendations"].append({
@@ -336,6 +354,15 @@ async def analyze_query(query: str = Query(..., description="Query to analyze"))
             "warnings": validation_result.get("warnings", []),
             "recommendations": []
         }
+        
+        # Add spell correction information if available
+        if "original_query" in validation_result and "spell_corrections" in validation_result:
+            response["query_processing"] = {
+                "original_query": validation_result["original_query"],
+                "processed_query": validation_result["cleaned_query"],
+                "spell_corrections": validation_result["spell_corrections"],
+                "corrections_applied": len(validation_result["spell_corrections"]) > 0
+            }
         
         # Add recommendations based on analysis
         if len(query.split()) < 3:

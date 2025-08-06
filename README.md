@@ -51,6 +51,7 @@ The Legal RAG System is a sophisticated document question-answering platform des
 - **Hybrid Retrieval**: Combines dense and sparse retrieval methods
 - **Context Preservation**: Maintains document context across chunks
 - **Relevance Scoring**: Advanced similarity scoring and ranking
+- **Spell Correction**: Automatic correction of misspelled legal and insurance terms
 
 ### AI Integration
 - **Voyage AI Embeddings**: High-quality vector embeddings
@@ -244,6 +245,7 @@ CHUNK_OVERLAP = 200        # Overlap between chunks
 # Search Configuration
 TOP_K_RESULTS = 5          # Number of search results
 SEARCH_SIMILARITY_THRESHOLD = 0.8  # Similarity threshold
+ENABLE_SPELL_CORRECTION = True    # Enable automatic spell correction
 
 # API Configuration
 VOYAGE_MODEL = "voyage-3-large"    # Embedding model
@@ -299,6 +301,9 @@ curl -X POST "http://localhost:8000/query/ask?question=What%20is%20the%20employe
 
 # Search documents
 curl -X GET "http://localhost:8000/query/search?query=termination%20provisions"
+
+# The system automatically corrects misspelled terms
+curl -X GET "http://localhost:8000/query/search?query=what%20is%20my%20deductable%20amount"
 ```
 
 #### Using Python
@@ -460,7 +465,19 @@ Ask a question about uploaded documents.
     }
   ],
   "confidence": 0.95,
-  "warnings": []
+  "warnings": [],
+  "query_processing": {
+    "original_query": "What is the employee's base salery?",
+    "processed_query": "what is the employee's base salary",
+    "spell_corrections": [
+      {
+        "original": "salery",
+        "corrected": "salary",
+        "method": "fuzzy_match"
+      }
+    ],
+    "corrections_applied": true
+  }
 }
 ```
 

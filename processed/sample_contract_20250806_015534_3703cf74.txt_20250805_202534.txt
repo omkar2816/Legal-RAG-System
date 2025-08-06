@@ -1,0 +1,129 @@
+EMPLOYMENT AGREEMENT
+
+This Employment Agreement ("Agreement") is made and entered into as of January 15, 2023 (the "Effective Date"), by and between ABC Corporation, a Delaware corporation with its principal place of business at 123 Main Street, Anytown, USA ("Employer"), and John Doe, an individual residing at 456 Oak Avenue, Somewhere, USA ("Employee").
+
+WITNESSETH:
+
+WHEREAS, Employer desires to employ Employee as Chief Technology Officer; and
+
+WHEREAS, Employee desires to accept such employment on the terms and conditions set forth herein;
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, and other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the parties agree as follows:
+
+1. EMPLOYMENT AND DUTIES
+
+1.1 Position. Employer hereby employs Employee, and Employee hereby accepts employment, as Chief Technology Officer of Employer, reporting directly to the Chief Executive Officer.
+
+1.2 Duties. Employee shall perform all duties and responsibilities as are normally related to such position in accordance with Employer's bylaws, policies and applicable law, and such other duties as may be assigned by the Chief Executive Officer and/or Board of Directors of Employer.
+
+1.3 Full-Time Employment. Employee shall devote Employee's full business time, attention and efforts to the performance of Employee's duties hereunder. During the Term, Employee shall not engage in any other business, profession or occupation for compensation or otherwise which would conflict or interfere with the performance of such services either directly or indirectly without the prior written consent of the Board of Directors.
+
+2. TERM
+
+2.1 Initial Term. The initial term of this Agreement shall be for a period of three (3) years commencing on the Effective Date (the "Initial Term"), unless earlier terminated as provided herein.
+
+2.2 Renewal. Upon the expiration of the Initial Term, this Agreement shall automatically renew for successive one-year periods (each, a "Renewal Term"), unless either party provides written notice of non-renewal at least ninety (90) days prior to the expiration of the Initial Term or any Renewal Term. The Initial Term and all Renewal Terms are collectively referred to herein as the "Term."
+
+3. COMPENSATION AND BENEFITS
+
+3.1 Base Salary. Employer shall pay Employee a base salary of Two Hundred Fifty Thousand Dollars ($250,000) per annum (the "Base Salary"), payable in accordance with Employer's regular payroll practices. The Base Salary shall be reviewed annually by the Board of Directors or its Compensation Committee, and may be increased but not decreased.
+
+3.2 Annual Bonus. Employee shall be eligible to receive an annual performance bonus (the "Annual Bonus") with a target amount equal to fifty percent (50%) of the Base Salary, based upon the achievement of individual and corporate performance goals and objectives established by the Board of Directors or its Compensation Committee. The Annual Bonus, if any, shall be paid within ninety (90) days following the end of each fiscal year.
+
+3.3 Equity Incentives. Employee shall be granted stock options to purchase 100,000 shares of Employer's common stock pursuant to Employer's Equity Incentive Plan. Such options shall vest over a four-year period, with 25% vesting on the first anniversary of the Effective Date and the remainder vesting in equal monthly installments thereafter.
+
+3.4 Benefits. Employee shall be entitled to participate in all employee benefit plans, practices and programs maintained by Employer, as in effect from time to time, on a basis which is no less favorable than is provided to other similarly situated executives of Employer, to the extent consistent with applicable law and the terms of the applicable plans, practices and programs.
+
+3.5 Vacation. Employee shall be entitled to four (4) weeks of paid vacation per calendar year, to be taken at such times as may be approved in advance by the Chief Executive Officer.
+
+3.6 Business Expenses. Employee shall be entitled to receive prompt reimbursement for all reasonable business expenses incurred by Employee in performing services hereunder, in accordance with the policies and procedures established by Employer for its executives.
+
+4. TERMINATION
+
+4.1 Termination for Cause. Employer may terminate Employee's employment hereunder for Cause. For purposes of this Agreement, "Cause" shall mean: (i) Employee's willful failure to perform Employee's duties (other than any such failure resulting from incapacity due to physical or mental illness); (ii) Employee's willful failure to comply with any valid and legal directive of the Board of Directors; (iii) Employee's willful engagement in dishonesty, illegal conduct, or gross misconduct, which is, in each case, materially injurious to Employer or its affiliates; (iv) Employee's embezzlement, misappropriation, or fraud, whether or not related to Employee's employment with Employer; (v) Employee's conviction of or plea of guilty or nolo contendere to a crime that constitutes a felony; or (vi) Employee's material breach of any material obligation under this Agreement or any other written agreement between Employee and Employer or its affiliates.
+
+4.2 Termination Without Cause. Employer may terminate Employee's employment hereunder at any time without Cause upon thirty (30) days' written notice to Employee.
+
+4.3 Termination by Employee. Employee may terminate Employee's employment hereunder at any time for any reason or no reason upon thirty (30) days' written notice to Employer.
+
+4.4 Termination Due to Death or Disability. Employee's employment hereunder shall terminate automatically upon Employee's death, and Employer may terminate Employee's employment on account of Employee's Disability. For purposes of this Agreement, "Disability" shall mean Employee's inability, due to physical or mental incapacity, to substantially perform Employee's duties and responsibilities under this Agreement for one hundred eighty (180) days out of any three hundred sixty-five (365) day period.
+
+5. SEVERANCE
+
+5.1 Termination for Cause, by Employee, or Due to Death or Disability. If Employee's employment is terminated by Employer for Cause, by Employee for any reason, or due to Employee's death or Disability, Employee (or Employee's estate) shall be entitled to receive: (i) any accrued but unpaid Base Salary and accrued but unused vacation; (ii) reimbursement for unreimbursed business expenses properly incurred by Employee; and (iii) such employee benefits, if any, to which Employee may be entitled under Employer's employee benefit plans (the "Accrued Amounts").
+
+5.2 Termination Without Cause. If Employee's employment is terminated by Employer without Cause, Employee shall be entitled to receive: (i) the Accrued Amounts; (ii) continued payment of the Base Salary for twelve (12) months following the termination date; (iii) a pro-rata portion of the Annual Bonus for the fiscal year in which the termination occurs, based on actual performance and paid at the same time as such bonuses are paid to other executives; and (iv) continued health insurance coverage for Employee and Employee's eligible dependents for twelve (12) months following the termination date at the same level and cost as would have applied if Employee's employment had not been terminated.
+
+6. CONFIDENTIALITY
+
+6.1 Confidential Information. Employee acknowledges that during the Term, Employee will have access to and learn about Confidential Information. For purposes of this Agreement, "Confidential Information" means all information not generally known to the public, in spoken, printed, electronic or any other form or medium, relating directly or indirectly to: business processes, practices, methods, policies, plans, documents, operations, services, strategies, techniques, agreements, contracts, terms of agreements, transactions, potential transactions, negotiations, pending negotiations, know-how, trade secrets, computer programs, computer software, applications, operating systems, software design, web design, work-in-process, databases, manuals, records, systems, material, sources of material, supplier information, vendor information, financial information, results, accounting information, accounting records, legal information, marketing information, advertising information, pricing information, credit information, design information, payroll information, staffing information, personnel information, employee lists, supplier lists, vendor lists, developments, reports, internal controls, security procedures, graphics, drawings, sketches, market studies, sales information, revenue, costs, formulae, notes, communications, product plans, ideas, audiovisual programs, inventions, unpublished patent applications, original works of authorship, discoveries, experimental processes, experimental results, specifications, customer information, customer lists, client information, client lists, manufacturing information, factory lists, distributor lists, and buyer lists of Employer or its businesses or any existing or prospective customer, supplier, investor or other associated third party, or of any other person or entity that has entrusted information to Employer in confidence.
+
+6.2 Disclosure and Use Restrictions. Employee agrees and covenants: (i) to treat all Confidential Information as strictly confidential; (ii) not to directly or indirectly disclose, publish, communicate, or make available Confidential Information, or allow it to be disclosed, published, communicated, or made available, in whole or part, to any entity or person whatsoever not having a need to know and authority to know and use the Confidential Information in connection with the business of Employer; and (iii) not to access or use any Confidential Information, and not to copy any documents, records, files, media, or other resources containing any Confidential Information, or remove any such documents, records, files, media, or other resources from the premises or control of Employer, except as required in the performance of Employee's authorized employment duties to Employer.
+
+7. NON-COMPETITION AND NON-SOLICITATION
+
+7.1 Non-Competition. During the Term and for a period of twelve (12) months thereafter, Employee shall not, directly or indirectly, engage in or assist others in engaging in any business or enterprise that is competitive with Employer's business.
+
+7.2 Non-Solicitation of Employees. During the Term and for a period of twelve (12) months thereafter, Employee shall not, directly or indirectly, solicit or induce any employee of Employer to terminate his or her employment with Employer or to engage in any business competitive with Employer's business.
+
+7.3 Non-Solicitation of Customers. During the Term and for a period of twelve (12) months thereafter, Employee shall not, directly or indirectly, solicit or induce any customer, supplier, licensee, licensor, franchisee or other business relation of Employer to terminate or reduce its business relationship with Employer or to become a customer, supplier, licensee, licensor, franchisee or other business relation of any person engaged in any business competitive with Employer's business.
+
+8. INTELLECTUAL PROPERTY
+
+8.1 Work Product. Employee acknowledges and agrees that all writings, works of authorship, technology, inventions, discoveries, ideas and other work product of any nature whatsoever, that are created, prepared, produced, authored, edited, amended, conceived or reduced to practice by Employee individually or jointly with others during the Term and relating in any way to the business or contemplated business, research or development of Employer (regardless of when or where the Work Product is prepared or whose equipment or other resources is used in preparing the same) and all printed, physical and electronic copies, all improvements, rights and claims related to the foregoing, and other tangible embodiments thereof (collectively, "Work Product"), as well as any and all rights in and to copyrights, trade secrets, trademarks, patents and other intellectual property rights therein arising in any jurisdiction throughout the world and all related rights of priority under international conventions with respect thereto, including all pending and future applications and registrations therefor, and continuations, divisions, continuations-in-part, reissues, extensions and renewals thereof (collectively, "Intellectual Property Rights"), shall be the sole and exclusive property of Employer.
+
+8.2 Assignment. Employee hereby assigns to Employer all right, title and interest in and to all Work Product and Intellectual Property Rights therein. Employee agrees to execute any and all applications for domestic and foreign patents, copyrights or other proprietary rights and to do such other acts as may be requested by Employer to secure Employer's rights in the Work Product and Intellectual Property Rights therein.
+
+9. GOVERNING LAW AND JURISDICTION
+
+This Agreement, for all purposes, shall be construed in accordance with the laws of the State of Delaware without regard to conflicts of law principles. Any action or proceeding by either of the parties to enforce this Agreement shall be brought only in a state or federal court located in the State of Delaware. The parties hereby irrevocably submit to the exclusive jurisdiction of such courts and waive the defense of inconvenient forum to the maintenance of any such action or proceeding in such venue.
+
+10. ENTIRE AGREEMENT
+
+Unless specifically provided herein, this Agreement contains all of the understandings and representations between Employee and Employer pertaining to the subject matter hereof and supersedes all prior and contemporaneous understandings, agreements, representations and warranties, both written and oral, with respect to such subject matter.
+
+11. MODIFICATION AND WAIVER
+
+No provision of this Agreement may be amended or modified unless such amendment or modification is agreed to in writing and signed by Employee and by an authorized representative of Employer. No waiver by either of the parties of any breach by the other party hereto of any condition or provision of this Agreement to be performed by the other party hereto shall be deemed a waiver of any similar or dissimilar provision or condition at the same or any prior or subsequent time, nor shall the failure of or delay by either of the parties in exercising any right, power, or privilege hereunder operate as a waiver thereof to preclude any other or further exercise thereof or the exercise of any other such right, power, or privilege.
+
+12. SEVERABILITY
+
+Should any provision of this Agreement be held by a court of competent jurisdiction to be enforceable only if modified, or if any portion of this Agreement shall be held as unenforceable and thus stricken, such holding shall not affect the validity of the remainder of this Agreement, the balance of which shall continue to be binding upon the parties with any such modification to become a part hereof and treated as though originally set forth in this Agreement.
+
+13. CAPTIONS
+
+Captions and headings of the sections and paragraphs of this Agreement are intended solely for convenience and no provision of this Agreement is to be construed by reference to the caption or heading of any section or paragraph.
+
+14. COUNTERPARTS
+
+This Agreement may be executed in separate counterparts, each of which shall be deemed an original, but all of which taken together shall constitute one and the same instrument.
+
+15. SUCCESSORS AND ASSIGNS
+
+This Agreement is personal to Employee and shall not be assigned by Employee. Any purported assignment by Employee shall be null and void from the initial date of the purported assignment. Employer may assign this Agreement to any successor or assign (whether direct or indirect, by purchase, merger, consolidation, or otherwise) to all or substantially all of the business or assets of Employer. This Agreement shall inure to the benefit of Employer and permitted successors and assigns.
+
+16. NOTICE
+
+All notices, requests, consents, claims, demands, waivers and other communications hereunder shall be in writing and shall be deemed to have been given: (a) when delivered by hand (with written confirmation of receipt); (b) when received by the addressee if sent by a nationally recognized overnight courier (receipt requested); (c) on the third day after the date mailed, by certified or registered mail, return receipt requested, postage prepaid; or (d) on the date sent by facsimile or e-mail of a PDF document (with confirmation of transmission) if sent during normal business hours of the recipient, and on the next business day if sent after normal business hours of the recipient. Such communications must be sent to the respective parties at the addresses set forth in the first paragraph of this Agreement (or to such other address as may be designated by a party from time to time in accordance with this Section).
+
+17. REPRESENTATIONS OF EMPLOYEE
+
+Employee represents and warrants to Employer that: (a) Employee's execution, delivery and performance of this Agreement does not and will not conflict with, breach, violate or cause a default under any contract, agreement, instrument, order, judgment or decree to which Employee is a party or by which Employee is bound; (b) Employee is not a party to or bound by any employment agreement, noncompete agreement or confidentiality agreement with any other person or entity; and (c) upon the execution and delivery of this Agreement by Employer, this Agreement shall be the valid and binding obligation of Employee, enforceable in accordance with its terms.
+
+18. SURVIVAL
+
+Upon the expiration or other termination of this Agreement, the respective rights and obligations of the parties hereto shall survive such expiration or other termination to the extent necessary to carry out the intentions of the parties under this Agreement.
+
+IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above written.
+
+EMPLOYER:
+ABC CORPORATION
+
+By: _________________________
+Name: Jane Smith
+Title: Chief Executive Officer
+
+EMPLOYEE:
+
+_____________________________
+John Doe

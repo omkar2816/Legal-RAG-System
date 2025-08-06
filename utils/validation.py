@@ -93,7 +93,8 @@ class ValidationUtils:
             "valid": True,
             "errors": [],
             "warnings": [],
-            "cleaned_query": query
+            "cleaned_query": query,
+            "original_query": query
         }
         
         # Check if query is empty
@@ -101,6 +102,32 @@ class ValidationUtils:
             result["valid"] = False
             result["errors"].append("Query cannot be empty")
             return result
+        
+        # Apply spell correction if enabled
+        if settings.ENABLE_SPELL_CORRECTION:
+            try:
+                from utils.spell_correction import correct_query
+                spell_correction_result = correct_query(query)
+                
+                # If corrections were made, update the query and add warnings
+                if spell_correction_result["corrections_made"]:
+                    corrected_query = spell_correction_result["corrected_query"]
+                    corrections = spell_correction_result["corrections"]
+                    
+                    # Add warning about spell corrections
+                    correction_details = [f"{c['original']} → {c['corrected']}" for c in corrections]
+                    result["warnings"].append(f"Spell correction applied: {', '.join(correction_details)}")
+                    
+                    # Update the query with the corrected version
+                    query = corrected_query
+                    
+                    # Store original and corrected queries
+                    result["original_query"] = spell_correction_result["original_query"]
+                    result["spell_corrections"] = corrections
+            except ImportError:
+                logger.warning("Spell correction module not available")
+            except Exception as e:
+                logger.error(f"Error in spell correction: {e}")
         
         # Clean and normalize query
         cleaned_query = query.strip()
@@ -283,4 +310,4 @@ class ValidationUtils:
         return result
 
 # Global validation utils instance
-validation_utils = ValidationUtils() 
+validation_utils = ValidationUtils()

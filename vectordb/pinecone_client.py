@@ -1,7 +1,7 @@
 # vectordb/pinecone_client.py
 
 import os
-from pinecone import Pinecone, ServerlessSpec
+from pinecone import Pinecone, ServerlessSpec, CloudProvider
 from config.settings import settings
 
 # Global Pinecone client instance
@@ -31,7 +31,7 @@ def create_index(dimension=None, metric="cosine"):
             dimension=dimension,
             metric=metric,
             spec=ServerlessSpec(
-                cloud='aws',
+                cloud=CloudProvider.AWS,
                 region=settings.PINECONE_ENVIRONMENT
             )
         )
@@ -44,7 +44,98 @@ def get_index():
     pc = init_pinecone()
     return pc.Index(settings.PINECONE_INDEX_NAME)
 
-# Upsert embeddings with metadata
+# Check metadata size
+def check_metadata_size(metadata):
+    """
+    Check if metadata size is within Pinecone limits
+    
+    Args:
+        metadata: Metadata dictionary
+    
+    Returns:
+        Tuple of (is_valid, size_in_bytes)
+    """
+    import json
+    
+    # Convert to JSON to estimate size
+    metadata_json = json.dumps(metadata)
+    size_bytes = len(metadata_json.encode('utf-8'))  # More accurate size calculation
+    
+    # Pinecone limit is 40KB (40960 bytes) per vector
+    return size_bytes <= 40960, size_bytes
+
+# Trim metadata to fit size limits
+def trim_metadata(metadata, current_size):
+    """
+    Trim metadata to fit within Pinecone size limits
+    
+    Args:
+        metadata: Metadata dictionary
+        current_size: Current size in bytes
+    
+    Returns:
+        Trimmed metadata dictionary
+    """
+    import copy
+    import json
+    
+    # Make a copy to avoid modifying the original
+    trimmed = copy.deepcopy(metadata)
+    
+    # Fields to remove in order of priority (least important first)
+    fields_to_trim = [
+        'legal_terms',
+        'section_title',
+        'doc_source',
+        'doc_category',
+        'doc_date',
+        'doc_author',
+        'timestamp',
+        'file_path',
+        'file_name',
+        'legal_term_count',
+        'total_words',
+        'content_hash'
+    ]
+    
+    # Fields to truncate if removal doesn't reduce size enough
+    fields_to_truncate = {
+        'text': 1000,           # Limit text to 1000 chars
+        'doc_title': 100,       # Limit title to 100 chars
+        'section_content': 500  # Limit section content to 500 chars
+    }
+    
+    # Keep removing fields until size is acceptable
+    for field in fields_to_trim:
+        if field in trimmed and current_size > 40960:
+            del trimmed[field]
+            # Recalculate size
+            trimmed_json = json.dumps(trimmed)
+            current_size = len(trimmed_json.encode('utf-8'))
+            print(f"Removed field '{field}', new size: {current_size} bytes")
+    
+    # If still too large, truncate text fields
+    if current_size > 40960:
+        for field, max_length in fields_to_truncate.items():
+            if field in trimmed and isinstance(trimmed[field], str) and len(trimmed[field]) > max_length:
+                trimmed[field] = trimmed[field][:max_length] + "..."
+                # Recalculate size
+                trimmed_json = json.dumps(trimmed)
+                current_size = len(trimmed_json.encode('utf-8'))
+                print(f"Truncated field '{field}' to {max_length} chars, new size: {current_size} bytes")
+    
+    # If still too large after all trimming, keep only essential fields
+    if current_size > 40960:
+        essential_fields = ['doc_id', 'chunk_id', 'doc_type', 'is_legal_document']
+        extreme_trimmed = {k: trimmed[k] for k in essential_fields if k in trimmed}
+        trimmed_json = json.dumps(extreme_trimmed)
+        current_size = len(trimmed_json.encode('utf-8'))
+        print(f"Extreme trimming applied, keeping only essential fields. New size: {current_size} bytes")
+        return extreme_trimmed
+    
+    return trimmed
+
+# Upsert embeddings
 def upsert_embeddings(embeddings, metadata_list):
     """
     Upsert embeddings with metadata to Pinecone
@@ -57,9 +148,45 @@ def upsert_embeddings(embeddings, metadata_list):
     
     # Prepare vectors for upserting
     vectors = []
+    skipped = 0
+    
     for i, (embedding, metadata) in enumerate(zip(embeddings, metadata_list)):
-        vector_id = f"{metadata.get('doc_id', 'doc')}_{metadata.get('chunk_id', i)}"
-        vectors.append((vector_id, embedding, metadata))
+        # Check metadata size
+        is_valid_size, size_bytes = check_metadata_size(metadata)
+        
+        if not is_valid_size:
+            # Try to trim metadata
+            trimmed_metadata = trim_metadata(metadata, size_bytes)
+            is_valid_size, size_bytes = check_metadata_size(trimmed_metadata)
+            
+            if is_valid_size:
+                # Use trimmed metadata
+                vector_id = f"{trimmed_metadata.get('doc_id', 'doc')}_{trimmed_metadata.get('chunk_id', i)}"
+                vectors.append((vector_id, embedding, trimmed_metadata))
+                print(f"Trimmed metadata for vector {i} from original size to {size_bytes} bytes")
+            else:
+                # If still too large, create minimal metadata with just essential fields
+                minimal_metadata = {
+                    'doc_id': metadata.get('doc_id', f'doc_{i}'),
+                    'chunk_id': metadata.get('chunk_id', i),
+                    'doc_type': metadata.get('doc_type', 'unknown'),
+                    'minimal_metadata': True  # Flag to indicate this is minimal metadata
+                }
+                
+                # Verify minimal metadata size
+                is_minimal_valid, minimal_size = check_metadata_size(minimal_metadata)
+                if is_minimal_valid:
+                    vector_id = f"{minimal_metadata['doc_id']}_{minimal_metadata['chunk_id']}"
+                    vectors.append((vector_id, embedding, minimal_metadata))
+                    print(f"Using minimal metadata for vector {i}, size: {minimal_size} bytes")
+                else:
+                    # Skip this vector as a last resort
+                    skipped += 1
+                    print(f"Skipping vector {i} due to metadata size ({size_bytes} bytes) - even minimal metadata is too large")
+        else:
+            # Metadata size is fine
+            vector_id = f"{metadata.get('doc_id', 'doc')}_{metadata.get('chunk_id', i)}"
+            vectors.append((vector_id, embedding, metadata))
     
     # Upsert in batches
     batch_size = 100
@@ -67,7 +194,7 @@ def upsert_embeddings(embeddings, metadata_list):
         batch = vectors[i:i + batch_size]
         index.upsert(vectors=batch)
     
-    print(f"Upserted {len(vectors)} vectors to Pinecone")
+    print(f"Upserted {len(vectors)} vectors to Pinecone (skipped {skipped} due to size limits)")
 
 # Query embeddings
 def query_embeddings(query_vector, top_k=None, filter_dict=None):
@@ -93,7 +220,7 @@ def query_embeddings(query_vector, top_k=None, filter_dict=None):
         filter=filter_dict
     )
     
-    return results
+    return results.to_dict()
 
 # Get all vectors (for keyword search)
 def get_all_vectors(filter_dict=None, limit=10000):
@@ -113,7 +240,8 @@ def get_all_vectors(filter_dict=None, limit=10000):
         # Use fetch to get all vectors
         # First, get index stats to understand the data
         stats = index.describe_index_stats()
-        total_vectors = stats.get('total_vector_count', 0)
+        stats_dict = stats.to_dict()
+        total_vectors = stats_dict.get('total_vector_count', 0)
         
         if total_vectors == 0:
             return []
@@ -122,7 +250,7 @@ def get_all_vectors(filter_dict=None, limit=10000):
         # Since Pinecone doesn't have a direct "get all" method,
         # we'll use a dummy query to get a large number of results
         # Create a dummy vector of zeros for the query
-        dimension = stats.get('dimension', 1024)
+        dimension = stats_dict.get('dimension', 1024)
         dummy_vector = [0.0] * dimension
         
         # Query with a very high top_k to get most/all vectors
@@ -133,12 +261,15 @@ def get_all_vectors(filter_dict=None, limit=10000):
             filter=filter_dict
         )
         
-        if not results or 'matches' not in results:
+        # Convert results to dictionary format
+        results_dict = results.to_dict()
+        
+        if not results_dict or 'matches' not in results_dict:
             return []
         
         # Convert to list format
         vectors = []
-        for match in results['matches']:
+        for match in results_dict['matches']:
             vector_data = {
                 'id': match.get('id', ''),
                 'metadata': match.get('metadata', {}),
@@ -173,4 +304,5 @@ def get_index_stats():
         Index statistics
     """
     index = get_index()
-    return index.describe_index_stats()
+    stats = index.describe_index_stats()
+    return stats.to_dict()

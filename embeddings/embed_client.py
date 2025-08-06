@@ -88,12 +88,9 @@ class EmbeddingClient:
             Embedding dimension
         """
         # Voyage AI embedding model dimensions
-        if "voyage-large-2" in self.model:
+        if "voyage-3-large" in self.model:
             return 1024
-        elif "voyage-code-2" in self.model:
-            return 1024
-        elif "voyage-law-2" in self.model:
-            return 1024
+        # Add other model dimension mappings here if needed
         else:
             # Default to 1024 for compatibility with existing index
             return 1024

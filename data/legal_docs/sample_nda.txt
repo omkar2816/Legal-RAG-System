@@ -1,0 +1,119 @@
+NON-DISCLOSURE AGREEMENT
+
+This Non-Disclosure Agreement (the "Agreement") is entered into as of August 1, 2023 (the "Effective Date") by and between:
+
+XYZ Tech, Inc., a California corporation with its principal place of business at 789 Technology Drive, Silicon Valley, CA 94025 ("Disclosing Party")
+
+and
+
+ABC Ventures, LLC, a Delaware limited liability company with its principal place of business at 456 Venture Boulevard, New York, NY 10001 ("Receiving Party").
+
+Disclosing Party and Receiving Party may be referred to individually as a "Party" or collectively as the "Parties."
+
+1. PURPOSE
+
+The Parties wish to explore a potential business relationship relating to potential investment and strategic partnership opportunities (the "Purpose"). In connection with the Purpose, Disclosing Party may disclose to Receiving Party certain confidential and proprietary information, and the Parties wish to protect the confidentiality of such information.
+
+2. DEFINITION OF CONFIDENTIAL INFORMATION
+
+2.1 "Confidential Information" means any information disclosed by Disclosing Party to Receiving Party, either directly or indirectly, in writing, orally or by inspection of tangible objects, that is designated as "Confidential," "Proprietary" or some similar designation, or that should reasonably be understood to be confidential given the nature of the information and the circumstances of disclosure. Confidential Information may include, but is not limited to:
+
+(a) technical information, including patent applications, inventions, discoveries, trade secrets, know-how, software, research, operations, processes, products, algorithms, formulae, data, designs, drawings, engineering, hardware configuration information, and technical specifications;
+
+(b) business information, including business plans, forecasts, strategies, operations, policies, procedures, financial information, pricing information, customer lists, supplier information, marketing plans, and personnel information; and
+
+(c) the terms and conditions of this Agreement.
+
+2.2 Confidential Information shall not include any information that:
+
+(a) was publicly known and made generally available in the public domain prior to the time of disclosure by Disclosing Party;
+
+(b) becomes publicly known and made generally available after disclosure by Disclosing Party to Receiving Party through no action or inaction of Receiving Party;
+
+(c) is already in the possession of Receiving Party at the time of disclosure by Disclosing Party, as shown by Receiving Party's files and records;
+
+(d) is obtained by Receiving Party from a third party without a breach of such third party's obligations of confidentiality; or
+
+(e) is independently developed by Receiving Party without use of or reference to Disclosing Party's Confidential Information, as shown by documents and other competent evidence in Receiving Party's possession.
+
+3. NON-DISCLOSURE AND NON-USE
+
+3.1 Receiving Party shall:
+
+(a) hold the Confidential Information in strict confidence and take reasonable precautions to protect such Confidential Information (including, without limitation, all precautions Receiving Party employs with respect to its own confidential materials);
+
+(b) not divulge any Confidential Information to any third party, except to employees, officers, directors, contractors, agents, and advisors (collectively, "Representatives") who need to know such information for the Purpose and who are bound by confidentiality obligations at least as restrictive as those contained herein;
+
+(c) not copy or reverse engineer any materials containing Confidential Information or remove any proprietary markings from any Confidential Information; and
+
+(d) only use the Confidential Information for the Purpose and not for any other purpose.
+
+3.2 Receiving Party shall be responsible for any breach of this Agreement by any of its Representatives and agrees to take all reasonable measures to restrain its Representatives from prohibited or unauthorized disclosure or use of the Confidential Information.
+
+4. REQUIRED DISCLOSURE
+
+If Receiving Party is required by law, regulation, or court order to disclose any Confidential Information, Receiving Party will promptly notify Disclosing Party in writing prior to making any such disclosure in order to facilitate Disclosing Party seeking a protective order or other appropriate remedy from the proper authority. Receiving Party agrees to cooperate with Disclosing Party in seeking such order or other remedy. Receiving Party further agrees that if Disclosing Party is not successful in precluding the requesting legal body from requiring the disclosure of the Confidential Information, it will furnish only that portion of the Confidential Information which is legally required and will exercise all reasonable efforts to obtain reliable assurances that confidential treatment will be accorded the Confidential Information.
+
+5. RETURN OF MATERIALS
+
+Upon the earlier of (i) the completion or termination of the Purpose, (ii) the termination of this Agreement, or (iii) at any time upon the request of Disclosing Party, Receiving Party shall promptly return to Disclosing Party all copies, whether in written, electronic or other form or media, of Disclosing Party's Confidential Information, or destroy all such copies and certify in writing to Disclosing Party that such Confidential Information has been destroyed. Notwithstanding the foregoing, Receiving Party may retain copies of Confidential Information that are stored on Receiving Party's IT backup and disaster recovery systems until the ordinary course deletion thereof. Receiving Party shall continue to be bound by the terms and conditions of this Agreement with respect to such retained Confidential Information.
+
+6. NO RIGHTS OR LICENSES
+
+Nothing in this Agreement is intended to grant any rights to Receiving Party under any patent, copyright, trade secret or other intellectual property right of Disclosing Party, nor shall this Agreement grant Receiving Party any rights in or to the Confidential Information, except the limited right to use the Confidential Information for the Purpose. Nothing in this Agreement shall be construed as obligating the Parties to enter into any other agreement or business arrangement, or to refrain from entering into an agreement or business arrangement with any third party.
+
+7. NO WARRANTY
+
+ALL CONFIDENTIAL INFORMATION IS PROVIDED "AS IS." DISCLOSING PARTY MAKES NO WARRANTIES, EXPRESS, IMPLIED OR OTHERWISE, REGARDING THE ACCURACY, COMPLETENESS OR PERFORMANCE OF ANY CONFIDENTIAL INFORMATION.
+
+8. TERM AND TERMINATION
+
+8.1 This Agreement shall commence on the Effective Date and shall remain in effect for a period of three (3) years, unless earlier terminated by either Party upon thirty (30) days' written notice to the other Party.
+
+8.2 Notwithstanding the termination of this Agreement, the obligations of Receiving Party under this Agreement with respect to Confidential Information disclosed during the term of this Agreement shall survive for a period of five (5) years from the date of termination of this Agreement.
+
+9. REMEDIES
+
+9.1 Receiving Party acknowledges that any breach or threatened breach of this Agreement may cause irreparable harm to Disclosing Party for which monetary damages would be inadequate. Accordingly, in addition to any other remedies available at law or in equity, Disclosing Party shall be entitled to seek injunctive relief to enforce the terms of this Agreement, without the necessity of proving actual damages or posting any bond or other security.
+
+9.2 In the event of any legal action to enforce the provisions of this Agreement, the prevailing Party shall be entitled to recover its reasonable attorneys' fees and costs incurred in connection with such action.
+
+10. MISCELLANEOUS
+
+10.1 Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflicts of law principles.
+
+10.2 Jurisdiction and Venue. Any legal suit, action, or proceeding arising out of or related to this Agreement or the matters contemplated hereunder shall be instituted exclusively in the federal courts of the United States or the courts of the State of Delaware, and each Party irrevocably submits to the exclusive jurisdiction of such courts in any such suit, action, or proceeding.
+
+10.3 Entire Agreement. This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior or contemporaneous oral or written agreements concerning such subject matter.
+
+10.4 Amendment. This Agreement may only be amended, modified, or supplemented by an agreement in writing signed by each Party hereto.
+
+10.5 Waiver. No waiver by any Party of any of the provisions hereof shall be effective unless explicitly set forth in writing and signed by the Party so waiving. No waiver by any Party shall operate or be construed as a waiver in respect of any failure, breach, or default not expressly identified by such written waiver, whether of a similar or different character, and whether occurring before or after that waiver. No failure to exercise, or delay in exercising, any right, remedy, power, or privilege arising from this Agreement shall operate or be construed as a waiver thereof.
+
+10.6 Severability. If any term or provision of this Agreement is invalid, illegal, or unenforceable in any jurisdiction, such invalidity, illegality, or unenforceability shall not affect any other term or provision of this Agreement or invalidate or render unenforceable such term or provision in any other jurisdiction.
+
+10.7 Assignment. Neither Party may assign or transfer any of its rights or obligations under this Agreement without the prior written consent of the other Party, except that either Party may assign this Agreement to a successor in connection with a merger, acquisition, corporate reorganization, or sale of all or substantially all of its assets. Any attempted assignment or transfer in violation of this Section shall be null and void. This Agreement shall be binding upon and shall inure to the benefit of the Parties hereto and their respective successors and permitted assigns.
+
+10.8 Notices. All notices, requests, consents, claims, demands, waivers, and other communications hereunder shall be in writing and shall be deemed to have been given: (a) when delivered by hand (with written confirmation of receipt); (b) when received by the addressee if sent by a nationally recognized overnight courier (receipt requested); (c) on the third day after the date mailed, by certified or registered mail, return receipt requested, postage prepaid; or (d) on the date sent by facsimile or e-mail of a PDF document (with confirmation of transmission) if sent during normal business hours of the recipient, and on the next business day if sent after normal business hours of the recipient. Such communications must be sent to the respective Parties at the addresses set forth in the first paragraph of this Agreement (or to such other address that may be designated by a Party from time to time in accordance with this Section).
+
+10.9 Counterparts. This Agreement may be executed in counterparts, each of which shall be deemed an original, but all of which together shall be deemed to be one and the same agreement. A signed copy of this Agreement delivered by facsimile, e-mail or other means of electronic transmission shall be deemed to have the same legal effect as delivery of an original signed copy of this Agreement.
+
+10.10 Export Control. Receiving Party shall not export, directly or indirectly, any technical data acquired from Disclosing Party pursuant to this Agreement or any product utilizing any such data to any country for which the U.S. Government or any agency thereof at the time of export requires an export license or other governmental approval without first obtaining such license or approval.
+
+10.11 Equitable Relief. Each Party acknowledges that a breach by a Party of Section 3 (Non-Disclosure and Non-Use) may cause the non-breaching Party irreparable damages, for which an award of damages would not be adequate compensation and agrees that, in the event of such breach or threatened breach, the non-breaching Party will be entitled to seek equitable relief, including a restraining order, injunctive relief, specific performance and any other relief that may be available from any court, in addition to any other remedy to which the non-breaching Party may be entitled at law or in equity. Such remedies shall not be deemed to be exclusive but shall be in addition to all other remedies available at law or in equity, subject to any express exclusions or limitations in this Agreement to the contrary.
+
+IN WITNESS WHEREOF, the Parties hereto have executed this Agreement as of the Effective Date.
+
+DISCLOSING PARTY:
+XYZ TECH, INC.
+
+By: _________________________
+Name: Sarah Johnson
+Title: Chief Executive Officer
+
+RECEIVING PARTY:
+ABC VENTURES, LLC
+
+By: _________________________
+Name: Michael Brown
+Title: Managing Partner

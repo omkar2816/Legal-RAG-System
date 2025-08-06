@@ -1,7 +1,7 @@
 """
 Document ingestion API endpoints
 """
-from fastapi import APIRouter, UploadFile, File, Form, HTTPException, BackgroundTasks, Depends
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from typing import List, Dict, Any, Optional
 import logging
@@ -37,7 +37,6 @@ hackrx_router = APIRouter(tags=["HackRx"])
 
 @hackrx_router.post("/run")
 async def run_api(
-    background_tasks: BackgroundTasks,
     files: List[UploadFile] = File(...),
     questions: str = Form(...),
     current_user: Dict[str, Any] = Depends(get_current_user) if settings.ENABLE_AUTH else None
@@ -78,12 +77,10 @@ async def run_api(
             if file.size > 5 * 1024 * 1024:  # 5MB
                 logger.warning(f"Large file detected: {file.filename} ({file.size/1024/1024:.2f} MB). Processing may take longer.")
         
-        # Process all uploaded files
+        # Process all uploaded files synchronously
         processed_documents = []
         doc_titles = []
-        
-        # Set a timeout for document processing to prevent long-running operations
-        doc_processing_timeout = 120  # seconds
+        doc_ids = []  # Track document IDs for later reference
         
         for file in files:
             # Validate file upload
@@ -124,15 +121,16 @@ async def run_api(
                 
                 logger.info(f"Processing file: {file.filename} ({file_size_mb:.2f} MB)")
                 
-                # Process document in background
+                # Process document synchronously
                 doc_type = "policy"  # Default document type
                 doc_title = file.filename
                 doc_titles.append(doc_title)  # Add to list of processed document titles
                 
-                # Process document synchronously with timeout protection
+                # Process document synchronously - no timeout, ensure complete processing
+                start_process_time = datetime.now()
                 try:
-                    start_process_time = datetime.now()
-                    await process_document_sync(
+                    # Process document and get doc_id
+                    doc_id = await process_document_sync(
                         saved_file_path,
                         file.filename,
                         file.content_type,
@@ -140,6 +138,11 @@ async def run_api(
                         doc_title,
                         None  # No author information
                     )
+                    
+                    # Store the document ID for later reference
+                    if doc_id:
+                        doc_ids.append(doc_id)
+                    
                     process_time = (datetime.now() - start_process_time).total_seconds()
                     logger.info(f"Document processing completed in {process_time:.2f} seconds")
                     
@@ -147,6 +150,7 @@ async def run_api(
                         "filename": file.filename,
                         "content_type": file.content_type,
                         "file_size": file.size,
+                        "doc_id": doc_id,
                         "processing_status": "completed",
                         "processing_time": f"{process_time:.2f} seconds",
                         "warnings": validation_result.get("warnings", [])
@@ -158,7 +162,7 @@ async def run_api(
                         "content_type": file.content_type,
                         "file_size": file.size,
                         "processing_status": "failed",
-                        "error": f"Processing timeout or error: {str(e)}"
+                        "error": f"Processing error: {str(e)}"
                     })
                 
             except Exception as e:
@@ -172,8 +176,11 @@ async def run_api(
                 })
         
         # Check if any documents were successfully processed
-        if not doc_titles:
+        if not doc_ids:
             raise HTTPException(status_code=400, detail="No documents were successfully processed")
+            
+        # Ensure all documents are fully processed before proceeding
+        logger.info(f"All documents processed successfully: {doc_ids}")
         
         # Process each question and collect answers with performance optimizations
         answers = []
@@ -319,7 +326,6 @@ async def run_api(
 
 @router.post("/upload")
 async def upload_document(
-    background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     doc_type: str = "unknown",
     doc_title: str = None,
@@ -347,25 +353,38 @@ async def upload_document(
         file_content = await file.read()
         saved_file_path = file_utils.save_uploaded_file(file_content, file.filename)
         
-        # Process document in background
-        background_tasks.add_task(
-            process_document,
-            saved_file_path,
-            file.filename,
-            file.content_type,
-            doc_type,
-            doc_title,
-            doc_author
-        )
-        
-        return JSONResponse(
-            status_code=202,
-            content={
-                "message": "Document uploaded successfully and processing started",
-                "file_path": saved_file_path,
-                "warnings": validation_result.get("warnings", [])
-            }
-        )
+        # Process document synchronously
+        start_process_time = datetime.now()
+        try:
+            # Process document and get doc_id
+            doc_id = await process_document_sync(
+                saved_file_path,
+                file.filename,
+                file.content_type,
+                doc_type,
+                doc_title,
+                doc_author
+            )
+            
+            process_time = (datetime.now() - start_process_time).total_seconds()
+            logger.info(f"Document processing completed in {process_time:.2f} seconds")
+            
+            return JSONResponse(
+                status_code=200,
+                content={
+                    "message": "Document uploaded and processed successfully",
+                    "doc_id": doc_id,
+                    "file_path": saved_file_path,
+                    "processing_time": f"{process_time:.2f} seconds",
+                    "warnings": validation_result.get("warnings", [])
+                }
+            )
+        except Exception as e:
+            logger.error(f"Error processing document {file.filename}: {e}")
+            raise HTTPException(
+                status_code=500, 
+                detail=f"Document upload succeeded but processing failed: {str(e)}"
+            )
         
     except Exception as e:
         logger.error(f"Error uploading document: {e}")
@@ -373,7 +392,6 @@ async def upload_document(
 
 @router.post("/upload-multiple")
 async def upload_multiple_documents(
-    background_tasks: BackgroundTasks,
     files: List[UploadFile] = File(...)
 ):
     """
@@ -394,18 +412,37 @@ async def upload_multiple_documents(
                 file_content = await file.read()
                 saved_file_path = file_utils.save_uploaded_file(file_content, file.filename)
                 
-                background_tasks.add_task(
-                    process_document,
-                    saved_file_path,
-                    file.filename,
-                    file.content_type
-                )
-                
-                results.append({
-                    "filename": file.filename,
-                    "status": "accepted",
-                    "file_path": saved_file_path
-                })
+                # Process document synchronously
+                start_process_time = datetime.now()
+                try:
+                    # Process document and get doc_id
+                    doc_id = await process_document_sync(
+                        saved_file_path,
+                        file.filename,
+                        file.content_type,
+                        "unknown",  # Default doc_type
+                        None,      # Default doc_title
+                        None       # Default doc_author
+                    )
+                    
+                    process_time = (datetime.now() - start_process_time).total_seconds()
+                    logger.info(f"Document processing completed in {process_time:.2f} seconds")
+                    
+                    results.append({
+                        "filename": file.filename,
+                        "status": "processed",
+                        "doc_id": doc_id,
+                        "file_path": saved_file_path,
+                        "processing_time": f"{process_time:.2f} seconds"
+                    })
+                except Exception as e:
+                    logger.error(f"Error processing document {file.filename}: {e}")
+                    results.append({
+                        "filename": file.filename,
+                        "status": "processing_failed",
+                        "file_path": saved_file_path,
+                        "error": str(e)
+                    })
             else:
                 results.append({
                     "filename": file.filename,

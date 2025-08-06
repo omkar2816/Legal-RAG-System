@@ -36,8 +36,17 @@ class MetadataBuilder:
         """
         metadata_list = []
         
+        # Simplify document metadata to reduce size
+        simplified_doc_metadata = None
+        if doc_metadata:
+            simplified_doc_metadata = {
+                'doc_type': doc_metadata.get('doc_type', 'unknown'),
+                'doc_title': doc_metadata.get('title', ''),
+                'doc_id': doc_id
+            }
+        
         for i, chunk in enumerate(chunks):
-            chunk_metadata = self._build_chunk_metadata(chunk, doc_id, i, doc_metadata)
+            chunk_metadata = self._build_chunk_metadata(chunk, doc_id, i, simplified_doc_metadata)
             metadata_list.append(chunk_metadata)
         
         return metadata_list
@@ -56,50 +65,58 @@ class MetadataBuilder:
         Returns:
             Metadata dictionary
         """
-        # Base metadata
+        # Base metadata - REDUCED to prevent exceeding Pinecone's 40KB limit
         metadata = {
             "doc_id": doc_id,
             "chunk_id": chunk.get('chunk_id', f"chunk_{chunk_idx}"),
             "chunk_idx": chunk_idx,
-            "text": chunk.get('text', ''),
+            # Remove full text from metadata to reduce size
+            # "text": chunk.get('text', ''),
             "word_count": chunk.get('word_count', 0),
-            "timestamp": datetime.utcnow().isoformat(),
-            "content_hash": self._hash_content(chunk.get('text', '')),
+            # Store only the first 10 characters of the timestamp to save space
+            "timestamp": datetime.utcnow().isoformat()[:10],
+            # Remove content_hash to save space
+            # "content_hash": self._hash_content(chunk.get('text', '')),
         }
         
-        # Add section information if available
+        # Add section information if available, but limit title length
         if 'section_title' in chunk:
+            # Truncate section title to 50 characters to save space
+            section_title = chunk['section_title'][:50] if len(chunk['section_title']) > 50 else chunk['section_title']
             metadata.update({
-                "section_title": chunk['section_title'],
+                "section_title": section_title,
                 "section_idx": chunk['section_idx']
             })
         
-        # Add position information
-        if 'start_word' in chunk and 'end_word' in chunk:
-            metadata.update({
-                "start_word": chunk['start_word'],
-                "end_word": chunk['end_word']
-            })
+        # Remove position information to save space
+        # if 'start_word' in chunk and 'end_word' in chunk:
+        #     metadata.update({
+        #         "start_word": chunk['start_word'],
+        #         "end_word": chunk['end_word']
+        #     })
         
-        # Add document metadata
+        # Add document metadata if provided - but only essential fields
         if doc_metadata:
+            # Add only the most important document metadata
             metadata.update({
                 "doc_type": doc_metadata.get('doc_type', 'unknown'),
-                "doc_title": doc_metadata.get('title', ''),
-                "doc_author": doc_metadata.get('author', 'Unknown'),
-                "doc_date": doc_metadata.get('date', ''),
-                "doc_source": doc_metadata.get('source', ''),
-                "doc_category": doc_metadata.get('category', ''),
+                "doc_title": doc_metadata.get('title', '')[:100] if doc_metadata.get('title', '') and len(doc_metadata.get('title', '')) > 100 else doc_metadata.get('title', ''),
+                # Remove less important fields to save space
+                # "doc_author": doc_metadata.get('author', 'Unknown'),
+                # "doc_date": doc_metadata.get('date', ''),
+                # "doc_source": doc_metadata.get('source', ''),
+                # "doc_category": doc_metadata.get('category', ''),
             })
         else:
-            # Ensure all required fields have default values
+            # Ensure only essential fields have default values
             metadata.update({
                 "doc_type": "unknown",
                 "doc_title": "",
-                "doc_author": "Unknown",
-                "doc_date": "",
-                "doc_source": "",
-                "doc_category": "",
+                # Remove less important fields to save space
+                # "doc_author": "Unknown",
+                # "doc_date": "",
+                # "doc_source": "",
+                # "doc_category": "",
             })
         
         # Add legal term analysis
@@ -144,15 +161,16 @@ class MetadataBuilder:
         legal_word_count = sum(term_counts.values())
         legal_density = legal_word_count / total_words if total_words > 0 else 0
         
-        # Convert term_counts to a list of strings for Pinecone compatibility
-        legal_terms_list = []
-        for term, count in term_counts.items():
-            legal_terms_list.extend([term] * count)  # Add term once for each occurrence
+        # Further reduce metadata size by only storing top 3 most frequent terms
+        # and truncating term length if necessary
+        top_terms = sorted(term_counts.items(), key=lambda x: x[1], reverse=True)[:3]
+        top_terms_list = [term[:30] for term, _ in top_terms]  # Limit each term to 30 chars
         
         return {
-            "legal_terms": legal_terms_list,  # Now a list of strings instead of dict
-            "legal_term_count": legal_word_count,
-            "legal_density": legal_density,
+            # Only include legal terms if there are any to save space
+            "legal_terms": top_terms_list if top_terms_list else [],  # Only store top 3 terms
+            # "legal_term_count": legal_word_count,  # Remove to save space
+            "legal_density": round(legal_density, 3),  # Round to 3 decimal places to save space
             "is_legal_document": legal_density > 0.01  # 1% threshold
         }
     
@@ -171,21 +189,26 @@ class MetadataBuilder:
         """
         import os
         
+        # Reduce document metadata to essential fields only
         metadata = {
             "doc_id": self._generate_doc_id(file_path),
-            "file_path": file_path,
+            # Store only filename, not full path to save space
+            # "file_path": file_path,
             "file_name": os.path.basename(file_path),
             "file_type": file_type,
-            "file_size": os.path.getsize(file_path) if os.path.exists(file_path) else 0,
-            "upload_timestamp": datetime.utcnow().isoformat(),
+            # Store file size in KB instead of bytes to save space
+            "file_size_kb": round(os.path.getsize(file_path) / 1024) if os.path.exists(file_path) else 0,
+            # Store only the date part of the timestamp
+            "upload_date": datetime.utcnow().isoformat()[:10],
         }
         
-        # Analyze content if provided
+        # Analyze content if provided - but store minimal information
         if content:
             analysis = self._analyze_legal_terms(content)
             metadata.update({
-                "total_words": len(content.split()),
-                "legal_density": analysis["legal_density"],
+                # Round word count to nearest 100 to save space
+                "total_words": round(len(content.split()) / 100) * 100,
+                "legal_density": round(analysis["legal_density"], 3),
                 "is_legal_document": analysis["is_legal_document"]
             })
         
